@@ -6,4 +6,6 @@ class User < ApplicationRecord
     e = e.gsub(" ", "").downcase if e
     super
   end
+
+  has_secure_password
 end

@@ -38,7 +38,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "expect email format invalid" do
-    invalid_addr = [ 'user @email.com', 'user@ email.com' ]
+    invalid_addr = [ ' ', 'user_email.com' ]
     invalid_addr.each do |addr|
       @user.email = addr
       assert_not @user.valid?, "#{addr} should be invalid!"
@@ -47,8 +47,21 @@ class UserTest < ActiveSupport::TestCase
 
   test "expect email is unique and BIG CHAR the same normal char" do
     dup_user = @user.dup
+    dup_user.email = @user.email.upcase
     @user.save
-    dup_user.email.upcase
     assert_not dup_user.valid?
+  end
+
+  test "expect email able to triming" do
+    @user.email = 'user @ example.com'
+    @user.save
+    assert_equal 'user@example.com', @user.reload.email
+  end
+
+  test "expect email able to downcase" do
+    mixed_email = 'User@Example.Com'
+    @user.email = mixed_email
+    @user.save
+    assert_equal mixed_email.downcase, @user.reload.email
   end
 end

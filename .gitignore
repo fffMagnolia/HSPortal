@@ -34,3 +34,10 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore DS_Store
+
+app/assets/stylesheets/fontawesome-free/.DS_Store
+app/javascript/bootstrap/.DS_Store
+app/javascript/vendor/.DS_Store
+app/javascript/vendor/fontawesome-free/.DS_Store

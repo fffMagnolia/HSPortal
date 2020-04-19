@@ -7,7 +7,6 @@ gem 'rails', '6.0.2.1'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
@@ -15,7 +14,6 @@ gem 'bcrypt', '3.1.7'
 gem 'email_validator', '2.0.1'
 gem 'bootstrap', '4.4.1'
 gem 'jquery-rails', '4.3.5'
-#gem 'sass-rails', '>= 6'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # Use Redis adapter to run Action Cable in production
@@ -26,7 +24,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3', '~> 1.4'
+  gem 'sqlite3', '1.4'
 end
 
 group :development do

@@ -1,6 +1,16 @@
-<div class="profile text-white">
-  <h1 class="text-white mb-4">Profile</h1>
-
-  <%= gravatar_for @user %>
-  <%= @user.name %>
+<div class="base_background">
+  <h1 class="profile-title text-white mb-3 text-center">Profile</h1>
+  <div class="text-white container">
+    <div class="row">
+      <div class="profile-icon col"><%= gravatar_for @user %></div>
+      <div class="profile-data col">
+        <div class="profile-data-item"><%= @user.name %></div>
+        <div class="profile-data-item"><p>お寿司食べたいよー</p></div>
+        <div class="profile-data-item">
+          <%= link_to "編集", "#", class: "" %>
+          <%= link_to "削除", "#", class: "" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

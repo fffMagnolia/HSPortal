@@ -23,8 +23,38 @@
   box-sizing: border-box;
 }
 
-/* profile */
-.profile {
-  padding-top: 10rem;
+/* base */
+.base_background{
+  padding-top: 15rem;
+  padding-bottom: 15rem;
   background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
+  margin: 0;
+}
+
+/* profile */
+.profile-title {
+  margin-bottom: 5%;
+}
+
+.profile-icon {
+  padding-left: 25%;
+  margin-bottom: 5%;
+}
+
+.profile-data {
+  padding-right: 25%;
+}
+
+.profile-data-item {
+  margin-bottom: 20%;
+}
+
+.small-btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 0.75rem 2rem;
+  font-family: 'Varela Round';
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: .15rem;
+  border: 0;
 }

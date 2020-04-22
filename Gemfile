@@ -41,6 +41,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'minitest', '5.14.0'
+  gem 'rails-controller-testing', '1.0.4'
 end
 
 group :production do

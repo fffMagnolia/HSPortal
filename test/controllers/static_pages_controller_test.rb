@@ -18,4 +18,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | HSPortal"
   end
+
+  test "should get policy" do
+    get policy_path
+    assert_response :success
+    assert_select "title", "Policy | HSPortal"
+  end
 end

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/help', to: 'static_pages#help'
   get '/contact', to: 'static_pages#contact'
   get '/policy', to: 'static_pages#policy'
+  get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
 
   resources :users
 end

@@ -3,8 +3,11 @@
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
       <h1 class="mx-auto my-0 text-uppercase">HSPortal</h1>
-      <h2 class="text-white-50 mx-auto mt-2 mb-5">HSPortalへようこそ。世界人口の20％を占めるHSP（Higly Sensitive Person）。私たちの世界を覗いてみませんか？</h2>
-      <%= link_to "始めてみる", "#", class: "btn btn-primary" %>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5">
+        Welcome to HSPortal. A world population has 20% HSP. Do you know their viewpoint?
+      </h2>
+      <!-- HSPortalへようこそ。世界人口の20％を占めるHSP（Higly Sensitive Person）。私たちの世界を覗いてみませんか？ -->
+      <%= link_to "Get Stated", signup_path, class: "btn btn-primary" %>
     </div>
   </div>
 </header>
@@ -14,7 +17,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2 class="text-white mb-4">HSPとはなんでしょう？</h2>
+        <h2 class="text-white mb-4">Wath HSP?</h2>
         <p class="text-white-50">
           HSPとは、DOESと呼ばれる特性を持ち,少し敏感で、繊細な人々のことです。
           <%= link_to "提唱者の翻訳サイトはこちら", "http://hspjk.life.coocan.jp" %>
@@ -36,7 +39,7 @@
       </div>
       <div class="col-xl-4 col-lg-5">
         <div class="featured-text text-center text-lg-left">
-          <h4>HSPであることの恩恵・悩み</h4>
+          <h4>HSPなのは良いこと？　悪いこと？</h4>
           <p class="text-black-50 mb-0">
             繊細な感覚を持ち合わせているHSPには良い面と悪い面があります。
             HSPの多くは生きづらさを感じますが、同時に人生に非常な充足感を覚えます。
@@ -130,7 +133,7 @@
         <div class="card py-4 h-100">
           <div class="card-body text-center">
             <i class="fas fa-envelope text-primary mb-2"></i>
-            <h4 class="text-uppercase m-0"><%= link_to "お問い合わせ", contact_path %></h4>
+            <h4 class="text-uppercase m-0"><%= link_to "Contact", contact_path %></h4>
             <hr class="my-4">
             <div class="small text-black-50"></div>
           </div>
@@ -141,7 +144,7 @@
         <div class="card py-4 h-100">
           <div class="card-body text-center">
             <i class="fas fa-mobile-alt text-primary mb-2"></i>
-            <h4 class="text-uppercase m-0"><%= link_to "利用規約・ポリシー", policy_path %></h4>
+            <h4 class="text-uppercase m-0"><%= link_to "Rule/Policy", policy_path %></h4>
             <hr class="my-4">
             <div class="small text-black-50"></div>
           </div>
@@ -153,7 +156,7 @@
       <a href="#" class="mx-2">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="#" class="mx-2">
+      <a href="https://github.com/fffMagnolia/HSPortal.git" class="mx-2">
         <i class="fab fa-github"></i>
       </a>
     </div>

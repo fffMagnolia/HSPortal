@@ -4,9 +4,11 @@
 
   <body>
     <%= render 'shard/navbar' %>
+
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
+
     <%= yield %>
 
     <%= render 'shard/footer' %>

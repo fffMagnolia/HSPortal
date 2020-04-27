@@ -5,6 +5,7 @@
   <body>
     <%= render 'shard/navbar' %>
 
+    <%# トップページのみ他ページとデザインが統一されていないため、表示位置がおかしなことになっている。デザイン最終調整時になおすこと %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>

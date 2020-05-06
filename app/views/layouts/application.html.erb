@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
   <%= render 'shard/header' %>
-  <body class="base_background text-white">
+  <body class="">
     <%= render 'shard/navbar' %>
 
-    <div>
-      <h1 class="title md-3 text-center"><%= yield :title %></h1>
-      <!-- エラー等はここに表示される -->
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
+    <h1 class="title text-center"><%= full_headline(yield :title) %></h1>
+    <!-- エラー等はここに表示される -->
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
 
-      <%= yield %>
-    </div>
+    <%= yield %>
 
-    <%= render 'shard/footer' %>
+    <div><%= render 'shard/footer' %></div>
   </body>
 </html>

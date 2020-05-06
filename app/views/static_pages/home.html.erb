@@ -1,165 +1,58 @@
+<% provide :title, 'HSPortalへようこそ' %>
 <!-- Header -->
-<header class="masthead">
+<header>
   <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
-      <h1 class="mx-auto my-0 text-uppercase">HSPortal</h1>
-      <h2 class="text-white-50 mx-auto mt-2 mb-5">
-        Welcome to HSPortal. A world population has 20% HSP. Do you know their viewpoint?
+      <h2 class="mx-auto mt-2 md-5">
+        
       </h2>
       <!-- HSPortalへようこそ。世界人口の20％を占めるHSP（Higly Sensitive Person）。私たちの世界を覗いてみませんか？ -->
-      <%= link_to "Get Stated", signup_path, class: "btn btn-primary" %>
     </div>
   </div>
 </header>
 
-<!-- About Section -->
-<section id="about" class="about-section text-center">
-  <div class="container">
+<!-- Main Section -->
+<section>
+  <div class="container h-100">
+    <h3 class="text-center">HSPortalでできること</h3>
     <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h2 class="text-white mb-4">What HSP?</h2>
-        <p class="text-white-50">
-          HSPとは、DOESと呼ばれる特性を持ち,少し敏感で、繊細な人々のことです。
-          <%= link_to "提唱者の翻訳サイトはこちら", "http://hspjk.life.coocan.jp" %>
-        </p>
-      </div>
-    </div>
-    <%= image_tag "img/ipad.png", class: "img-fluid" %>
-  </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="projects-section bg-light">
-  <div class="container">
-
-    <!-- Featured Project Row -->
-    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-      <div class="col-xl-8 col-lg-7">
-        <%= image_tag "img/bg-masthead.jpg", class: "img-fluid mb-3 mb-lg-0"%>
-      </div>
-      <div class="col-xl-4 col-lg-5">
-        <div class="featured-text text-center text-lg-left">
-          <h4>HSPなのは良いこと？　悪いこと？</h4>
-          <p class="text-black-50 mb-0">
-            繊細な感覚を持ち合わせているHSPには良い面と悪い面があります。
-            HSPの多くは生きづらさを感じますが、同時に人生に非常な充足感を覚えます。
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project One Row -->
-    <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-      <div class="col-lg-6">
-        <%= image_tag 'img/demo-image-01.jpg', class: 'img-fluid' %>
-      </div>
-      <div class="col-lg-6">
-        <div class="bg-black text-center h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 my-auto text-center text-lg-left">
-              <h4 class="text-white">良いこと</h4>
-              <p class="mb-0 text-white-50">
-                HSPは感覚が鋭く、料理を味わったり、花の匂いをかいだり、音楽を聴いたりする時にそうでない人より多くの情報を受け取っています。
-                また、他人の心にも敏感なので誰かが喜んでいると自分も同じくらい嬉しくなったりするのです。
-              </p>
-              <hr class="d-none d-lg-block mb-0 ml-0">
+      <!-- item1 -->
+      <div class="col-md-4 md-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center text-dark">
+            <h4>知る</h4>
+            <hr class="my-4" />
+            <div class="small">
+              HSPとは何か？　最新の研究情報など。
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- Project Two Row -->
-    <div class="row justify-content-center no-gutters">
-      <div class="col-lg-6">
-        <%= image_tag 'img/demo-image-02.jpg', class: 'img-fluid'%>
-      </div>
-      <div class="col-lg-6 order-lg-first">
-        <div class="bg-black text-center h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 my-auto text-center text-lg-right">
-              <h4 class="text-white">悪いこと</h4>
-              <p class="mb-0 text-white-50">
-                感覚が鋭いということは、職場での物音にも敏感ということです。
-                HSPの多くは近くに人がいると集中できず、また他人への気遣いのあまり疲れ切ってしまうことが多いのです。
-              </p>
-              <hr class="d-none d-lg-block mb-0 mr-0">
+      <!-- item2 -->
+      <div class="col-md-4 md-3 mb-md-0">
+        <div class="card py-4 h-100">
+          <div class="card-body text-center text-dark">
+            <h4>聞く</h4>
+            <hr class="my-4" />
+            <div class="small">
+              他のユーザに相談したり、疑問を投げかけてみたりできます。
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Signup Section -->
-<!--
-<section id="signup" class="signup-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-
-        <form class="form-inline d-flex">
-          <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-          <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-        </form>
-
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-<!-- Contact Section -->
-<section class="contact-section bg-black">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3 mb-md-0">
+      <!-- item3 -->
+      <div class="col-md-4 md-3 mb-md-0">
         <div class="card py-4 h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-            <h4 class="text-uppercase m-0"><%= link_to "Q&A", help_path %></h4>
-            <hr class="my-4">
-            <div class="small text-black-50"></div>
-          </div>
-        </div>'
-      </div>
-
-      <div class="col-md-4 mb-3 mb-md-0">
-        <div class="card py-4 h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-envelope text-primary mb-2"></i>
-            <h4 class="text-uppercase m-0"><%= link_to "Contact", contact_path %></h4>
-            <hr class="my-4">
-            <div class="small text-black-50"></div>
+          <div class="card-body text-center text-dark">
+            <h4>動く</h4>
+            <hr class="my-4" />
+            <div class="small">
+              関連イベントに参加したり、主催することができます。
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-md-4 mb-3 mb-md-0">
-        <div class="card py-4 h-100">
-          <div class="card-body text-center">
-            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-            <h4 class="text-uppercase m-0"><%= link_to "Rule/Policy", policy_path %></h4>
-            <hr class="my-4">
-            <div class="small text-black-50"></div>
-          </div>
-        </div>
+        <!-- -->
       </div>
     </div>
-
-    <div class="social d-flex justify-content-center">
-      <a href="#" class="mx-2">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://github.com/fffMagnolia/HSPortal.git" class="mx-2">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-
   </div>
 </section>

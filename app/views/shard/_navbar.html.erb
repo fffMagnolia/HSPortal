@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-  <%= link_to "HSPortal", root_path, class: "navbar-brand" %>
+  <%= link_to "HSPortal", root_path, class: "navbar-brand text-white" %>
   <!-- 規程幅以下になった場合の表示 -->
   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="false" aria-label="switch view">
     <span class="navbar-toggler-icon"></span>
@@ -10,21 +10,23 @@
   <div class="collapse navbar-collapse" id="Navbar">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <%= link_to "News", "#", class: "nav-link" %>
+        <%= link_to "News", "#", class: "nav-link text-white" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Posts", "#", class: "nav-link" %>
+        <%= link_to "Posts", "#", class: "nav-link text-white" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Events", "#", class: "nav-link" %>
+        <%= link_to "Events", "#", class: "nav-link text-white" %>
       </li>
       <% if logged_in? %>
-        <!-- ドロップダウンメニューの設定 -->
-        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
-        <!-- ドロップダウンメニューの中身 -->
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-          <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+        <div class="dropdown">
+          <!-- ドロップダウンメニューの設定 -->
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+          <!-- ドロップダウンメニューの中身 -->
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item text-white" %>
+            <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item text-white" %>
+          </div>
         </div>
       <% else %>
         <%= link_to "Sign up", signup_path, class: "nav-link" %>or<%= link_to "Login", login_path, class: "nav-link" %>

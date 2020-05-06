@@ -1,7 +1,27 @@
-<%= debug(params) if Rails.env.development? %>
+<!-- Another Path -->
+<div class="container d-flex h-100 bg-dark">
+  <!-- item1 -->
+  <div class="row">
+    <ul>
+      <li><%= link_to "Q&A", help_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to "Rule/Policy", policy_path %></li>
+    </ul>
+  </div>
+  <!-- item2 -->
+  <div class="row">
+    <ul>
+      <li><%= link_to "Twitter", "#" %></li>
+      <li><%= link_to "GitHub", "https://github.com/fffMagnolia/HSPortal.git" %></li>
+  </div>
+  <!-- -->
+</div>
+
 <!-- Footer -->
-<footer class="bg-black small text-center text-white-50">
+<footer class="small text-center">
   <div class="container">
     Copyright &copy; HSPortal 2020 HSPortal
   </div>
 </footer>
+<!-- debug -->
+<%#= debug(params) if Rails.env.development? %>

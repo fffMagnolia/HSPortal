@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <%= render 'shard/header' %>
-
-  <body>
+  <body class="base_background text-white">
     <%= render 'shard/navbar' %>
 
-    <%# トップページのみ他ページとデザインが統一されていないため、表示位置がおかしなことになっている。デザイン最終調整時になおすこと %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
+    <div>
+      <h1 class="title md-3 text-center"><%= yield :title %></h1>
+      <!-- エラー等はここに表示される -->
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
     <%= render 'shard/footer' %>
   </body>

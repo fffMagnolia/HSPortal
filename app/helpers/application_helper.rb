@@ -7,4 +7,13 @@ module ApplicationHelper
       add_title + " | " + base_title
     end
   end
+
+  def full_headline(custom_word)
+    base = 'HSPortal'
+    if custom_word.empty?
+      base
+    else
+      custom_word
+    end
+  end
 end

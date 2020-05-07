@@ -29,7 +29,11 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
           password_confirmation: "testuser"
         } }
     end
+    assert_redirected_to root_url
     follow_redirect!
-    assert_template 'static_pages/home'
+    # logged_in?はtest_helperのを呼び出している
+    assert logged_in?
+    # フラッシュメッセージが表示されていることを期待
+    assert_not flash.empty?
   end
 end

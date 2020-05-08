@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # sessions helper method "log_in"
       log_in user
+      # 仮置き
+      remember(user)
       redirect_to root_path
     else
       flash.now[:danger] = "Email or Password Invalid."
@@ -19,7 +21,7 @@ class SessionsController < ApplicationController
 
   # logout
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end

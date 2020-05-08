@@ -1,6 +1,5 @@
 <% provide :title, 'Log in' %>
-<div class="base_background text-white">
-  <h1 class="title mb-3 text-center"><%= yield :title %></h1>
+<div class="">
   <div class="container">
     <%= form_for(:session, url: login_path) do |f| %>
       <div class="row">
@@ -14,6 +13,14 @@
 
         <div class="left-item col-6"></div>
         <div class="right-item col-3"><%= f.submit 'Login', class: 'btn btn-primary' %></div>
+
+        <div class="left-item col-6"></div>
+        <div class="right-item col-6">
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %><span>次回以降自動でログインする</span>
+          <% end %>
+        </div>
+
       </div>
     <% end %>
   </div>

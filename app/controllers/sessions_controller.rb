@@ -10,8 +10,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # sessions helper method "log_in"
       log_in user
-      # 仮置き
-      remember(user)
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       redirect_to root_path
     else
       flash.now[:danger] = "Email or Password Invalid."

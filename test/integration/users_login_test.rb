@@ -56,4 +56,18 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", logout_path, count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
   end
+
+  test "except login and remember user" do
+    log_in(@user, remember_me: '1')
+    # forgetメソッドが呼ばれていないことを期待
+    assert_not_empty cookies['remember_token']
+  end
+
+  test "except login and forget user" do
+    log_in(@user, remember_me: '1')
+    delete logout_path
+
+    log_in(@user, remember_me: '0')
+    assert_empty cookies['remember_token']
+  end
 end

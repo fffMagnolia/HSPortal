@@ -13,6 +13,7 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
+  # 未使用
   def log_in(user)
     session[:user_id] = user.id
   end

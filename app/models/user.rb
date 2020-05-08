@@ -31,7 +31,7 @@ class User < ApplicationRecord
   # tokenとdigestが一致したらtrueを返す
   def authenticated?(remember_token)
     return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   # DBの永続セッション情報を破棄

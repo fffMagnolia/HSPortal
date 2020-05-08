@@ -58,12 +58,14 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   end
 
   test "except login and remember user" do
+    # test_helperのメソッドを呼び出している
     log_in(@user, remember_me: '1')
     # forgetメソッドが呼ばれていないことを期待
     assert_not_empty cookies['remember_token']
   end
 
   test "except login and forget user" do
+    # test_helperのメソッドを呼び出している
     log_in(@user, remember_me: '1')
     delete logout_path
 

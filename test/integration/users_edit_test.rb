@@ -6,6 +6,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "expect fail update" do
+    log_in(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
     patch user_path, params: { user: {
@@ -18,6 +19,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
   test "expect success update" do
+    log_in(@user)
     get edit_user_path(@user)
     assert_template 'users/edit'
     patch user_path, params: { user: {

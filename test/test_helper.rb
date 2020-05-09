@@ -13,7 +13,7 @@ class ActiveSupport::TestCase
     !session[:user_id].nil?
   end
 
-  # 未使用
+  # users_edit_testで使用されている？
   def log_in(user)
     session[:user_id] = user.id
   end

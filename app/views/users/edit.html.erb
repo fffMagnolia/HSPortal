@@ -1,0 +1,13 @@
+<% provide :title, 'Edit Profile' %>
+<% provide :button_text, 'Update' %>
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="gravatar_edit left-item col-12">
+        <%= gravatar_for @user %>
+        <a href="http://gravatar.com/emails" target="_blank">変更（別ウィンドウで開きます)</a>
+      </div>
+      <%= render 'shard/form' %>
+    </div>
+  </div>
+</div>

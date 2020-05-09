@@ -6,7 +6,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:alice)
   end
 
-  test "except login error flash only login view" do
+  test "expect login error flash only login view" do
     get login_path
     assert_template 'sessions/new'
     post login_path, params: { session: {
@@ -21,7 +21,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert flash.empty?
   end
 
-  test "except login then logout" do
+  test "expect login then logout" do
     get login_path
     post login_path, params: { session: {
       email: @user.email,
@@ -57,14 +57,14 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", user_path(@user), count: 0
   end
 
-  test "except login and remember user" do
+  test "expect login and remember user" do
     # test_helperのメソッドを呼び出している
     log_in(@user, remember_me: '1')
     # forgetメソッドが呼ばれていないことを期待
     assert_not_empty cookies['remember_token']
   end
 
-  test "except login and forget user" do
+  test "expect login and forget user" do
     # test_helperのメソッドを呼び出している
     log_in(@user, remember_me: '1')
     delete logout_path

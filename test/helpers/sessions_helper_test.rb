@@ -7,13 +7,13 @@ class SessionsHelperTest < ActionView::TestCase
     remember(@user)
   end
 
-  test "except true and session is nil" do
+  test "expect true and session is nil" do
     assert_equal @user, current_user
     # session_helperのメソッドを呼んでいる?
     assert logged_in?
   end
 
-  test "except current_user is nil and remember_digest is wrong" do
+  test "expect current_user is nil and remember_digest is wrong" do
     @user.update_attribute(:remember_digest, User.digest(User.new_token))
     assert_nil current_user
   end

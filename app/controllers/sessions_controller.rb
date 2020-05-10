@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # sessions helper method "log_in"
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_to root_path
+      redirect_back_or root_url
     else
       flash.now[:danger] = "Email or Password Invalid."
       render 'new'

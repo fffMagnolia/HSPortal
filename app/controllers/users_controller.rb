@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   # need permission action
-  before_action :logged_in_user, only: [ :edit, :update ]
-  before_action :correct_user, only: [ :edit, :update ]
+  before_action :logged_in_user, only: [ :edit, :update, :destroy ]
+  before_action :correct_user, only: [ :edit, :update, :destroy ]
 
   def new
     @user = User.new
@@ -36,6 +36,13 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    log_out
+    flash[:success] = "退会手続きが完了しました。"
+    redirect_to root_url
   end
 
   private

@@ -1,5 +1,6 @@
-<h1>User#account_activation</h1>
+<h1><%= %>さん
 
-<p>
-  <%= @greeting %>, find me in app/views/user_mailer/account_activation.html.erb
-</p>
+HSPortalにご登録いただきありがとうございます。
+メールアカウントが使用可能かを確認するため、下記のリンクをクリックしてください。
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

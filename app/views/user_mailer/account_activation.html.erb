@@ -1,6 +1,6 @@
-<h1><%= %>さん
+<p><%= @user.name %>さん</p>
 
-HSPortalにご登録いただきありがとうございます。
-メールアカウントが使用可能かを確認するため、下記のリンクをクリックしてください。
+<p>HSPortalにご登録いただきありがとうございます。</p>
+<p>メールアドレスが使用可能かを確認するため、下記のリンクをクリックしてください。</p>
 
-<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= link_to "登録を完了する", edit_account_activation_url(@user.activation_token, email: @user.email) %>

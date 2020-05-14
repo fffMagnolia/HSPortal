@@ -72,6 +72,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "expect false when remember_digest was nil" do
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 end

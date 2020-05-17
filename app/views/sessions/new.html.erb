@@ -9,7 +9,11 @@
         <div class="right-item col-3"><%= f.email_field :email %></div>
 
         <div class="left-item col-6"><%= f.label :password %></div>
-        <div class="right-item col-3"><%= f.password_field :password %></div>
+        
+        <div class="right-item col-6">
+          <%= f.password_field :password %>
+          <p><%= link_to "パスワードを忘れましたか?", new_password_reset_path %></p>
+        </div>
 
         <div class="left-item col-6"></div>
         <div class="right-item col-3"><%= f.submit 'Login', class: 'btn btn-primary' %></div>

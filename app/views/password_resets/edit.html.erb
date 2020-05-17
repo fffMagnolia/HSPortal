@@ -3,7 +3,7 @@
   <div class="container">
     <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
       <div class="row">
-        <div class="col-11"><%#= render 'shard/error_messages' %></div>
+        <div class="col-11"><%= render 'parial/error_messages' %></div>
 
         <%# ユーザのメールアドレス情報をupdate actionに引き継ぐためhiddenで保持 %>
         <%= hidden_field_tag :email, @user.email %>

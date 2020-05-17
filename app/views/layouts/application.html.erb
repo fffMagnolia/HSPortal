@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'shard/header' %>
+  <%= render 'partial/header' %>
   <body class="">
-    <%= render 'shard/navbar' %>
+    <%= render 'partial/navbar' %>
 
     <h1 class="title text-center"><%= full_headline(yield :title) %></h1>
     <!-- エラー等はここに表示される -->
@@ -12,6 +12,6 @@
 
     <%= yield %>
 
-    <div><%= render 'shard/footer' %></div>
+    <div><%= render 'partial/footer' %></div>
   </body>
 </html>

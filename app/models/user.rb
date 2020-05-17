@@ -61,6 +61,10 @@ class User < ApplicationRecord
     Usermailer.password_reset(self).deliver_now
   end
 
+  def password_expired?
+    reset_send_at < 2.hours.ago
+  end
+
   private
 
   def create_activation_digest

@@ -11,7 +11,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by(email: params[:password_reset][:email].downcase)
     if @user
       @user.create_reset_digest
-      @user.sent_password_reset_email
+      @user.send_password_reset_email
       flash[:info] = "パスワード再設定用のメールを送信しました。ご確認ください。"
       # ログインフォームの方が使い勝手がいいかもしれない
       redirect_to root_url
@@ -42,7 +42,7 @@ class PasswordResetsController < ApplicationController
   private
 
     def user_params
-      params(:user).permit(:password, :password_confirmation)
+      params.require(:user).permit(:password, :password_confirmation)
     end
 
     def get_user

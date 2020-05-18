@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_for(@user) do |f| %>
     <div class="row">
-      <div class="col-11"><%= render 'shard/error_messages' %></div>
+      <div class="col-11"><%= render 'partial/error_messages' %></div>
 
       <div class="left-item col-6"><%= f.label :name %></div>
       <div class="right-item col-3"><%= f.text_field :name %></div>

@@ -3,7 +3,6 @@
   <div class="container">
     <%= form_for(:session, url: login_path) do |f| %>
       <div class="row">
-        <div class="col-11"><%= render 'partial/error_messages' %></div>
 
         <div class="left-item col-6"><%= f.label :email %></div>
         <div class="right-item col-3"><%= f.email_field :email %></div>

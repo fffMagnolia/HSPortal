@@ -13,3 +13,11 @@ User.create!(
   activated: true,
   activated_at: Time.zone.now
 )
+
+user = User.first
+10.times do |n|
+  content = Faker::Dessert.variety
+  r = Random.new
+  random_time = Time.zone.now + r.rand(24*60*60)
+  user.events.create!(content: content, start_date: random_time, end_date: Time.zone.now, title: "New Event #{n+1}") 
+end

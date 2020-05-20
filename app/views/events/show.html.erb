@@ -1,3 +1,9 @@
 <% provide :title, @event.title %>
 
 <p><%= @event.content %></p>
+
+<% if current_user.id == @event.user_id %>
+  <div>
+    <%= link_to "編集", edit_event_path(@event), class: "btn btn-primary" %>
+  </div>
+<% end %>

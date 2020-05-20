@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # 主宰したイベントを5件ごとに表示
+    @events = @user.events.paginate(page: params[:page], per_page: 5)
   end
 
   def create

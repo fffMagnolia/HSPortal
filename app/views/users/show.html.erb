@@ -13,6 +13,20 @@
           <% end %>
         </div>
       </div>
+
+      <!-- TODO: partialにしたい -->
+      <div class="col-md-8">
+        <% if @user.events.any? %>
+          <h3>開催したイベント <% @user.events.ount %>件</h3>
+          <ol class="events">
+            <% @user.events.each do |event| %>
+              <%= link_to event.title, event_path(event) %>
+              <p><%= event.start_date %> - <%= event_end_date %></p>
+            <% end %>
+          </ol>
+          <%= will_paginate @events %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

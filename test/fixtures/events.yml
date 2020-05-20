@@ -4,22 +4,26 @@ one:
   content: "One Event"
   start_date: <%= 10.minutes.ago %>
   end_date: <%= Time.zone.now %>
+  title: "one event"
   user: alice
 
 two:
   content: "Two Event"
   start_date: <%= 3.years.ago %>
   end_date: <%= Time.zone.now %>
+  title: "two event"
   user: alice
 
 three:
   content: "Three Event"
   start_date: <%= 2.hours.ago %>
   end_date: <%= Time.zone.now %>
+  title: "three event"
   user: alice
 
 most_recent:
   content: "Most recent Event"
   start_date: <%= Time.zone.now %>
   end_date: <%= Time.zone.now + 1.hours %>
+  title: "most recent event"
   user: alice

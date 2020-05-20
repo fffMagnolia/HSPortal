@@ -3,7 +3,7 @@ require 'test_helper'
 class EventTest < ActiveSupport::TestCase
   def setup
     @user = users(:alice)
-    @event = @user.events.build(content: "New Event For HSP", user_id: @user.id, start_date: Time.zone.now, end_date: (Time.zone.now + 1.hours))
+    @event = @user.events.build(content: "New Event For HSP", user_id: @user.id, start_date: Time.zone.now, end_date: (Time.zone.now + 1.hours), title: "New Event Now On Start!")
   end
 
   test "expect event valid" do
@@ -30,6 +30,11 @@ class EventTest < ActiveSupport::TestCase
     assert_not @event.valid?
   end
 
+  test "expect title present" do
+    @event.title = nil
+    assert_not @event.valid?
+  end
+  
   test "expect content max char 500" do
     @event.content = "a"*501
     assert_not @event.valid?

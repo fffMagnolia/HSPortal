@@ -77,7 +77,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "expect destroy user with associated events" do
     @user.save
-    @user.events.create!(content: "A Event", start_date: Time.zone.now, end_date: Time.zone.now)
+    @user.events.create!(content: "An Event", start_date: Time.zone.now, end_date: Time.zone.now, title: "An Event Now On Start!")
     assert_difference 'Event.count', -1 do
       @user.destroy
     end

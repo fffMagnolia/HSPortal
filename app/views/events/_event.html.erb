@@ -1,0 +1,4 @@
+<li id="event-<%= event.id %>">
+  <span class="title"><%= link_to event.title, event_path(event) %></span>
+  <span class="event_date"><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></span>
+</li>

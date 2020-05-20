@@ -27,3 +27,12 @@ most_recent:
   end_date: <%= Time.zone.now + 1.hours %>
   title: "most recent event"
   user: alice
+
+<% 30.times do |n| %>
+event_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  start_date: <%= 1.days.ago %>
+  end_date: <%= Time.zone.now %>
+  title: <%= Faker::Dessert.variety %>
+  user: alice
+<% end %>

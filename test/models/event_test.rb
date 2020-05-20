@@ -40,6 +40,11 @@ class EventTest < ActiveSupport::TestCase
     assert_not @event.valid?
   end
 
+  test "expect title max char 50" do
+    @event.title = "a"*51
+    assert_not @event.valid?
+  end
+
   # 最新のものから表示するよう設計
   test "expect order recent first" do
     assert_equal events(:most_recent), Event.first

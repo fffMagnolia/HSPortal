@@ -74,4 +74,12 @@ class UserTest < ActiveSupport::TestCase
   test "expect false when remember_digest was nil" do
     assert_not @user.authenticated?(:remember, '')
   end
+
+  test "expect destroy user with associated events" do
+    @user.save
+    @user.events.create!(content: "A Event", start_date: Time.zone.now, end_date: Time.zone.now)
+    assert_difference 'Event.count', -1 do
+      @user.destroy
+    end
+  end
 end

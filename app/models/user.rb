@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :events
+  has_many :events, dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 

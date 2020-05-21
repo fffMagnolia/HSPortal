@@ -2,7 +2,7 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
-  
+
   # 利便性のためuser_idに値を入れている
   def current_user
     if (user_id = session[:user_id])

@@ -1,0 +1,17 @@
+<% provide :title, 'Event List' %>
+
+<div>
+  <%= link_to "イベントを作成する", new_event_path, class: "btn btn-primary" %>
+</div>
+
+<ul class="events">
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event.title, event_path(event), class: "font-weight-bolder" %>
+      <%= event.content %>
+      <%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %>
+
+      <div class="font-weight-lighter"><%= event.user.name %></div>
+    </li>
+  <% end %>
+</ul>

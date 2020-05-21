@@ -15,5 +15,6 @@ module Hsportal
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    ActiveSupport::Deprecation.silenced = true if Rails.version == '6.0.2.1'
   end
 end

@@ -1,0 +1,22 @@
+<div class="container">
+  <%= form_for(@event) do |f| %>
+    <div class="row">
+      <div class="col-11"><%= render 'partial/error_messages', object: f.object %></div>
+
+      <div class="left-item col-6"><%= f.label :title%></div>
+      <div class="right-item col-3"><%= f.text_field :title %></div>
+
+      <div class="left-item col-6"><%= f.label :content %></div>
+      <div class="right-item col-3"><%= f.text_field :content %></div>
+
+      <div class="left-item col-6"><%= f.label :start_date %></div>
+      <div class="right-item col-3"><%= f.datetime_local_field :start_date %></div>
+
+      <div class="left-item col-6"><%= f.label :end_date %></div>
+      <div class="right-item col-3"><%= f.datetime_local_field :end_date %></div>
+
+      <div class="left-item col-6"></div>
+      <div class="right-item col-3"><%= f.submit yield(:button_text), class: 'btn btn-primary' %></div>
+    </div>
+  <% end %>
+</div>

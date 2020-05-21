@@ -49,4 +49,9 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
   end
+
+  # イベント主催者であることを期待している
+  def owner?(user)
+    current_user.id == user.id
+  end
 end

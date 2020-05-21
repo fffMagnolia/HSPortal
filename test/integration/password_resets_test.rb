@@ -6,7 +6,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     @user = users(:alice)
   end
 
-  test "expect send email for password reset" do
+  test "expect password reset" do
     get new_password_reset_path
     assert_template 'password_resets/new'
     post password_resets_path, params: { password_reset: {

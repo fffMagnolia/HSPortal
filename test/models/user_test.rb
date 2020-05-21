@@ -29,6 +29,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "expect message max-length 1000 char" do
+    @user.message = "a"*1001
+    assert_not @user.valid?
+  end
+
   test "expect email format valid" do
     valid_addr = [ 'user123@456example.com', 'USER@EXAMPLE.com', 'user+_-@example.com', 'user@example-foo.bar.com' ]
     valid_addr.each do |addr|

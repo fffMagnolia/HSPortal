@@ -7,11 +7,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
+    @event = current_user.events.build
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
     if @event.save
       flash[:success] = "イベント[#{@event.title}]を作成しました。"
       redirect_to events_url
@@ -21,10 +21,17 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.events.find_by(id: params[:id])
   end
 
   def update
+    @event = current_user.events.find_by(id: params[:id])
+    if @event.update(event_params)
+      flash[:success] = "イベント[#{@event.title}]を更新しました。"
+      redirect_to events_url
+    else
+      render 'edit'
+    end
   end
 
   def index

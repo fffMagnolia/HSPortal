@@ -11,6 +11,7 @@
           <%= link_to "Posts", "#" %>
           <%= link_to "Events", events_path %>
           <% if logged_in? %>
+            <!--
             <div class="dropdown">
               <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -18,6 +19,9 @@
                 <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
+            -->
+                <%= link_to "Profile", user_path(current_user), class: "" %>
+                <%= link_to "Logout", logout_path, method: :delete, class: "" %>
           <% else %>
             <%= link_to "Sign up", signup_path %>
             <%= link_to "Login", login_path %>
@@ -33,17 +37,17 @@
         </header>
         <div class="flex">
           <div>
-            <span class="icon fa-car"></span>
+            <span class="icon fas fa-search"></span>
             <h3>知る</h1>
             <p>HSPとはなんでしょうか？</p>
           </div>
           <div>
-            <span class="icon fa-camera"></span>
+            <span class="icon far fa-paper-plane"></span>
             <h3>聞く</h1>
             <p>誰かに相談してみませんか？</p>
           </div>
           <div>
-            <span class="icon fa-bug"></span>
+            <span class="icon far fa-comments"></span>
             <h3>動く</h1>
             <p>イベントの主催・参加ができます</p>
           </div>
@@ -60,7 +64,6 @@
           <article>
             <div class="image round">
               <%= image_tag "pic01.jpg", :alt => "Pic 01" %>
-              <!-- img src="./pic01.jpg" alt="Pic 01" / -->
             </div>
             <header>
               <h3>製作者1<br />よろしくお願いします</h3>
@@ -76,8 +79,7 @@
           </article>
           <article>
             <div class="image round">
-              <%#= image_tag 'pic02.jpg', alt: "Pic 02" %>
-              <img src="./pic02.jpg" alt="Pic 02" />
+              <%= image_tag 'pic02.jpg', alt: "Pic 02" %>
             </div>
             <header>
               <h3>製作者2<br />よろしくお願いします</h3>

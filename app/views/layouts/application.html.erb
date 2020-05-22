@@ -1,17 +1,126 @@
 <!DOCTYPE html>
 <html>
   <%= render 'partial/header' %>
-  <body class="">
-    <%= render 'partial/navbar' %>
-
-    <h1 class="title text-center"><%= full_headline(yield :title) %></h1>
-    <!-- エラー等はここに表示される -->
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-
-    <%= yield %>
-
-    <div><%= render 'partial/footer' %></div>
+  <body>
+    <!--header -->
+    <header id="header">
+      <div class="inner">
+        <strong><%= link_to "HSPortal", root_path, class: "logo" %></strong>
+        <nav id="nav">
+          <%= link_to "News", "#" %>
+          <%= link_to "Posts", "#" %>
+          <%= link_to "Events", events_path %>
+          <% if logged_in? %>
+            <div class="dropdown">
+              <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+                <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </div>
+          <% else %>
+            <%= link_to "Sign up", signup_path %>
+            <%= link_to "Login", login_path %>
+          <% end %>
+        </nav>
+      </div>
+    </header>
+    <!-- banner -->
+    <section id="banner">
+      <div class="inner">
+        <header>
+          <h1>HSPortalへようこそ</h1>
+        </header>
+        <div class="flex">
+          <div>
+            <span class="icon fa-car"></span>
+            <h3>知る</h1>
+            <p>HSPとはなんでしょうか？</p>
+          </div>
+          <div>
+            <span class="icon fa-camera"></span>
+            <h3>聞く</h1>
+            <p>誰かに相談してみませんか？</p>
+          </div>
+          <div>
+            <span class="icon fa-bug"></span>
+            <h3>動く</h1>
+            <p>イベントの主催・参加ができます</p>
+          </div>
+        </div>
+        <footer>
+          <%= link_to "Get Started", signup_path, class: "button" %>
+        </footer>
+      </div>
+    </section>
+    <!-- three -->
+    <section id="three" class="wrapper align-center">
+      <div class="inner">
+        <div class="flex flex-2">
+          <article>
+            <div class="image round">
+              <%= image_tag "pic01.jpg", :alt => "Pic 01" %>
+              <!-- img src="./pic01.jpg" alt="Pic 01" / -->
+            </div>
+            <header>
+              <h3>製作者1<br />よろしくお願いします</h3>
+            </header>
+            <p>
+              なんかそれっぽいことを<br />
+              三行に分けて<br />
+              書いたらいいのでは<br />
+            </p>
+            <footer>
+              <a href="#" class="button">Learn More</a>
+            </footer>
+          </article>
+          <article>
+            <div class="image round">
+              <%#= image_tag 'pic02.jpg', alt: "Pic 02" %>
+              <img src="./pic02.jpg" alt="Pic 02" />
+            </div>
+            <header>
+              <h3>製作者2<br />よろしくお願いします</h3>
+            </header>
+            <p>
+              なんかそれっぽいことを<br />
+              三行に分けて<br />
+              書いたらいいのでは<br />
+            </p>
+            <footer>
+              <a href="#" class="button">Learn More</a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+      <div class="inner">
+        <h3>いらない部分</h3>
+        <form action="#" method="post">
+          <div class="field half first">
+            <label for="name">Name</label>
+            <input name="name" id="name" type="text" placeholder="Name">
+          </div>
+          <div class="field half">
+            <label for="email">Email</label>
+            <input name="email" id="email" type="email" placeholder="Email">
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+          </div>
+          <ul class="actions">
+            <li>
+              <input value="Send Message" class="button alt" type="submit">
+            </li>
+          </ul>
+        </form>
+        <div class="copyright">
+          Copylight&copy;HSPortal
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -18,6 +18,7 @@ gem 'email_validator', '2.0.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'will_paginate', '3.1.7'
 gem 'faker', '2.11.0'
+gem 'sass-rails', '6.0.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

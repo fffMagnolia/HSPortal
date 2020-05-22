@@ -2915,6 +2915,59 @@
 				color: inherit;
 			}
 
+/* add outside banner */
+
+#welcome_info {
+	text-align: center;
+	padding: 4em 0 9em 0;
+}
+
+	#welcome_info .icon {
+		color: #6cc091;
+		font-size: 2em;
+	}
+
+	#welcome_info h3 {
+		font-weight: 400;
+		margin: 0;
+		font-size: 1.5em;
+	}
+
+	#welcome_info p {
+		font-size: 1em;
+		//color: rgba(255, 255, 255, 0.55);
+		margin-bottom: 1.75em;
+	}
+
+	#welcome_info .flex {
+		-ms-flex-pack: center;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		text-align: center;
+		margin: 0 auto 4em auto;
+	}
+
+		#welcome_info .flex div {
+			border-right: 2px solid rgba(255, 255, 255, 0.2);
+			padding: 0.8em;
+		}
+
+		#welcome_info .flex div:last-child {
+			border: none;
+			padding-right: 0;
+		}
+
+		#welcome_info .flex div:first-child {
+			padding-left: 0;
+		}
+
+		#welcome_info .flex div p {
+			margin: 0;
+		}
+
+
 /* Banner */
 
 	#banner {
@@ -2942,7 +2995,8 @@
 			border-top: 2px solid rgba(255, 255, 255, 0.2);
 			position: relative;
 			z-index: 10005;
-			padding-top: 8em;
+			//8em -> 4em
+			padding-top: 4em;
 		}
 
 		#banner h1 {
@@ -3115,24 +3169,37 @@
 		padding: 6em 0;
 		background: #6cc091;
 		color: #fff;
-		text-align: center;
+		//text-align: center;
 	}
 
 		#footer h3 {
 			color: #FFF;
 			margin-bottom: 2em !important;
+			text-align: center;
 		}
 
 		#footer label {
 			text-align: left;
 			color: #FFF;
+			text-align: center;
 		}
+
+		//add
+		#footer a {
+			color: #FFF;
+			text-align: left;
+			text-decoration: none;
+		}
+			#footer a:hover {
+				color: #FFF;
+			}
 
 		#footer .copyright {
 			color: rgba(255, 255, 255, 0.5);
 			font-size: 0.8em;
 			margin: 0 0 2em 0;
 			padding: 0;
+			text-align: center;
 		}
 
 			#footer .copyright a {

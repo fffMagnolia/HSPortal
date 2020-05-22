@@ -1,26 +1,45 @@
-<!-- Another Path -->
-<div class="container d-flex">
-  <!-- item1 -->
-  <div class="row">
-    <ul>
-      <li><%= link_to "Q&A", help_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><%= link_to "Rule/Policy", policy_path %></li>
-    </ul>
-  </div>
-  <!-- item2 -->
-  <div class="row">
-    <ul>
-      <li><%= link_to "Twitter", "#" %></li>
-      <li><%= link_to "GitHub", "https://github.com/fffMagnolia/HSPortal.git" %></li>
-  </div>
-  <!-- -->
-</div>
+<!-- footer -->
+<footer id="footer">
+  <div class="inner">
+    <h3>サイトマップ</h3>
+    <!-- item1 -->
+    <div class="row">
+      <ul>
+        <li><%= link_to "Q&A", help_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
+        <li><%= link_to "Rule/Policy", policy_path %></li>
+      </ul>
+    </div>
 
-<!-- Footer -->
-<footer class="small text-center">
-  <div class="container">
-    Copyright &copy; HSPortal 2020 HSPortal
+    <!--
+    <form action="#" method="post">
+      <div class="field half first">
+        <label for="name">Name</label>
+        <input name="name" id="name" type="text" placeholder="Name">
+      </div>
+      <div class="field half">
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email" placeholder="Email">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+      </div>
+      <ul class="actions">
+        <li>
+          <input value="Send Message" class="button alt" type="submit">
+        </li>
+      </ul>
+    </form>
+    -->
+    <div class="copyright">
+      Copyright &copy; HSPortal 2020 HSPortal
+    </div>
+    <!-- item2 -->
+    <div class="row flex justify-content-center">
+        <%= link_to "", "#", :alt => "Twitter", class: "icon fa-twitter" %>
+        <%= link_to "", "https://github.com/fffMagnolia/HSPortal.git", class: "icon fa-github" %>
+    </div>
   </div>
 </footer>
 <!-- debug -->

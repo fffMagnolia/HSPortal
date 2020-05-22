@@ -1,45 +1,63 @@
-<h6 class="text-center">HSPortalはHSP(Higly Sensitive Person)向けのWebサービスです。</h6>
-<!-- Main Section -->
-<section>
-  <div class="container">
-    <div class="row">
-      <!-- item1 -->
-      <div class="col-md-4 md-3 mb-md-0">
-        <div class="card py-4 h-100">
-          <div class="card-body text-center text-dark">
-            <h4>知る</h4>
-            <hr class="my-4" />
-            <div class="small">
-              HSPとは何か？　最新の研究情報など。
-            </div>
-          </div>
+<% provide :title, 'HSPortalへようこそ'%>
+<div id="welcome_info">
+  <div class="flex">
+    <div>
+      <span class="icon fas fa-search"></span>
+      <h3>知る</h3>
+      <p>HSPとはなんでしょうか？</p>
+    </div>
+    <div>
+      <span class="icon far fa-paper-plane"></span>
+      <h3>聞く</h3>
+      <p>誰かに相談してみませんか？</p>
+    </div>
+    <div>
+      <span class="icon far fa-comments"></span>
+      <h3>話す</h3>
+      <p>イベントの主催・参加ができます</p>
+    </div>
+  </div>
+  <footer>
+    <%= link_to "Get Started", signup_path, class: "button" %>
+  </footer>
+</div>
+
+<!-- three -->
+<section id="three" class="wrapper align-center">
+  <div class="inner">
+    <div class="flex flex-2">
+      <article>
+        <div class="image round">
+          <%= image_tag "pic01.jpg", :alt => "Pic 01" %>
         </div>
-      </div>
-      <!-- item2 -->
-      <div class="col-md-4 md-3 mb-md-0">
-        <div class="card py-4 h-100">
-          <div class="card-body text-center text-dark">
-            <h4>聞く</h4>
-            <hr class="my-4" />
-            <div class="small">
-              HSP気質由来の困り事や疑問を他ユーザと話し合ってみませんか？
-            </div>
-          </div>
+        <header>
+          <h3>製作者1<br />よろしくお願いします</h3>
+        </header>
+        <p>
+          なんかそれっぽいことを<br />
+          三行に分けて<br />
+          書いたらいいのでは<br />
+        </p>
+        <footer>
+          <a href="#" class="button">Learn More</a>
+        </footer>
+      </article>
+      <article>
+        <div class="image round">
+          <%= image_tag 'pic02.jpg', alt: "Pic 02" %>
         </div>
-      </div>
-      <!-- item3 -->
-      <div class="col-md-4 md-3 mb-md-0">
-        <div class="card py-4 h-100">
-          <div class="card-body text-center text-dark">
-            <h4>動く</h4>
-            <hr class="my-4" />
-            <div class="small">
-              関連イベントに参加したり、主催することができます。
-            </div>
-          </div>
-        </div>
-        <!-- -->
-      </div>
+        <header>
+          <h3>製作者2<br />よろしくお願いします</h3>
+        </header>
+        <p>
+          なんかそれっぽいことを<br />
+          三行に分けて<br />
+          書いたらいいのでは<br />
+        </p>
+        <footer>
+          <a href="#" class="button">Learn More</a>
+        </footer>
+      </article>
     </div>
   </div>
 </section>

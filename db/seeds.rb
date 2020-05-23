@@ -8,6 +8,7 @@
 User.create!(
   name: "Alice in Wonderland",
   email: "alice@example.com",
+  message: Faker::ChuckNorris.fact,
   password: 'foobarbaz',
   password_confirmation: 'foobarbaz',
   activated: true,

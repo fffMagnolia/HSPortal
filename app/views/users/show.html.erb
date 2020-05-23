@@ -1,28 +1,34 @@
 <% provide :title, 'Profile' %>
-<div class="">
-  <div class="container">
-    <div class="row">
-      <div class="left-item col"><%= gravatar_for @user %></div>
-      <div class="right-item col">
-        <div class="profile-data-item"><%= @user.name %></div>
-        <div class="profile-data-item"><p>お寿司食べたいよー</p></div>
-        <div class="profile-data-item">
-          <% if @user == current_user %>
-            <%= link_to "編集", edit_user_path(current_user), class: "btn btn-primary" %>
-            <%= link_to "削除", user_path, method: :delete, data: { confirm: '退会後のデータ復旧はできません。また主宰したイベントの情報も同時に削除されます。退会しますか？' }, class: "btn btn-primary" %>
-          <% end %>
-        </div>
-      </div>
 
-      <div class="col-md-8">
-        <% if @user.events.any? %>
-          <h3>開催したイベント: <%= @user.events.count %>件</h3>
-          <ol class="events">
-            <%= render @events %>
-          </ol>
-          <%= will_paginate @events %>
-        <% end %>
-      </div>
+<div class="align-center">
+  <h4 class="headline"><%= @user.name %></h4>
+    <span class="avatar "><%= gravatar_for @user %></span>
+    <p class=""><%= @user.message %></p>
+    <div class="actions ">
+      <% if @user == current_user %>
+        <%= link_to "編集", edit_user_path(current_user), class: "button " %>
+        <%= link_to "削除", user_path, method: :delete, data: { confirm: '退会後のデータ復旧はできません。また主宰したイベントの情報も同時に削除されます。退会しますか？' }, class: "button " %>
+      <% end %>
     </div>
-  </div>
+  <h4 class="headline">開催したイベント: <%= @user.events.count %>件</h4>
+</div>
+
+<div class="table-wrapper event-list">
+  <table class="center">
+    <thead>
+      <tr>
+        <th>イベントタイトル</th>
+        <th>開始日時 - 終了日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to event.title, event_path(event) %></td>
+          <td><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @events %>
 </div>

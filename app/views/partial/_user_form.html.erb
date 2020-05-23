@@ -1,22 +1,26 @@
-<div class="container">
+<div class="flex justify-content-center">
   <%= form_for(@user) do |f| %>
-    <div class="row">
-      <div class="col-11"><%= render 'partial/error_messages', object: f.object %></div>
-
-      <div class="left-item col-6"><%= f.label :name %></div>
-      <div class="right-item col-3"><%= f.text_field :name %></div>
-
-      <div class="left-item col-6"><%= f.label :email %></div>
-      <div class="right-item col-3"><%= f.email_field :email %></div>
-
-      <div class="left-item col-6"><%= f.label :password %></div>
-      <div class="right-item col-3"><%= f.password_field :password %></div>
-
-      <div class="left-item col-6"><%= f.label :password_confirmation, 'Confirmation' %></div>
-      <div class="right-item col-3"><%= f.password_field :password_confirmatio %></div>
-
-      <div class="left-item col-6"></div>
-      <div class="right-item col-3"><%= f.submit yield(:button_text), class: 'btn btn-primary' %></div>
+    <div class="field">
+      <%= render 'partial/error_messages', object: f.object %>
     </div>
+    <div class="field">
+      <%= f.label :name, 'ユーザー名' %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.email_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :password_confirmation, 'パスワード確認' %>
+      <%= f.password_field :password_confirmatio %>
+    </div>
+    <ul class="actions">
+      <li><%= f.submit yield(:button_text), class: 'btn' %></li>
+    </ul>
   <% end %>
 </div>

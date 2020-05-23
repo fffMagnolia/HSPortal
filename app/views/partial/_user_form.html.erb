@@ -1,8 +1,6 @@
 <div class="flex justify-content-center">
   <%= form_for(@user) do |f| %>
-    <div class="field">
-      <%= render 'partial/error_messages', object: f.object %>
-    </div>
+    <%= render 'partial/error_messages', object: f.object %>
     <div class="field">
       <%= f.label :name, 'ユーザー名' %>
       <%= f.text_field :name %>

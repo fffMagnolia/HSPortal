@@ -1,17 +1,27 @@
 <% provide :title, 'Event List' %>
 
-<div>
-  <%= link_to "イベントを作成する", new_event_path, class: "btn btn-primary" %>
+<div class="align-center">
+  <%= link_to "イベントを作成する", new_event_path, class: "button" %>
 </div>
 
-<ul class="events">
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to event.title, event_path(event), class: "font-weight-bolder" %>
-      <%= event.content %>
-      <%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %>
-
-      <div class="font-weight-lighter"><%= event.user.name %></div>
-    </li>
-  <% end %>
-</ul>
+<div class="table-wrapper event-list">
+  <table class="center">
+    <thead>
+      <tr>
+        <th>イベントタイトル</th>
+        <th>開始日時 - 終了日時</th>
+        <th>主催者</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= link_to event.title, event_path(event) %></td>
+          <td><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= link_to event.user.name, user_path(current_user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= will_paginate @events %>
+</div>

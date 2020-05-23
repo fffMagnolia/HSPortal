@@ -1,15 +1,15 @@
 <% provide :title, 'Forget Password' %>
-<div>
-  <div class="container">
-    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      <div class="row">
 
-        <div class="left-item col-6"><%= f.label :email %></div>
-        <div class="right-item col-3"><%= f.email_field :email %></div>
-
-        <div class="left-item col-6"></div>
-        <div class="right-item col-3"><%= f.submit 'メールを送信する', class: 'btn btn-primary' %></div>
-      </div>
-    <% end %>
+<div class="flex justify-content-center login-form">
+<%= form_for(:password_reset, url: password_resets_path) do |f| %>
+  <div class="field">
+    <%= f.label :email %> 
+    <%= f.email_field :email %>
   </div>
+  <ul class="actions">
+    <li>
+      <%= f.submit 'メールを送信する', class: 'btn' %> 
+    </li>
+  </ul>
+<% end %>
 </div>

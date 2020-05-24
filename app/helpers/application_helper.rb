@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def full_headline(custom_word)
-    base = 'HSPortal'
+    base = 'HSPortalへようこそ'
     if custom_word.empty?
       base
     else

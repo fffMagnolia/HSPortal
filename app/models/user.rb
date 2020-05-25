@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :events, dependent: :destroy
-  has_many :active_relationships, class_name: 'Entry', foreign_key: 'user_id', dependent: :destroy
+  # joinテーブルに対する関連付け
+  has_many :entries, class_name: 'Entry', foreign_key: 'user_id', dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 

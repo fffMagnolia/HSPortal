@@ -15,9 +15,19 @@ User.create!(
   activated_at: Time.zone.now
 )
 
+User.create!(
+  name: 'Marchhere',
+  email: 'marchhere@example.com',
+  message: Faker::Quotes::Shakespeare.hamlet_quote,
+  password: 'foobarbaz',
+  password_confirmation: 'foobarbaz',
+  activated: true,
+  activated_at: Time.zone.now
+)
+
 user = User.first
 10.times do |n|
-  content = Faker::Lorem.paragraphs
+  content = Faker::Quotes::Shakespeare.hamlet_quote
   r = Random.new
   random_time = Time.zone.now + r.rand(24*60*60)
   user.events.create!(content: content, start_date: random_time, end_date: Time.zone.now, title: "New Event #{n+1}") 

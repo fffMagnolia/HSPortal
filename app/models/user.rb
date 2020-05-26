@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   has_many :events, dependent: :destroy
-  # joinテーブルに対する関連付け
-  has_many :entries, class_name: 'Entry', foreign_key: 'user_id', dependent: :destroy
+  # user->entry
+  has_many :members, class_name: 'Entry', foreign_key: 'user_id', dependent: :destroy
+  # entry->user
+  has_many :entries, through: :members, source: 'event'
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -68,6 +70,14 @@ class User < ApplicationRecord
 
   def password_expired?
     reset_send_at < 30.minutes.ago
+  end
+
+  def entry(event)
+    entries << event
+  end
+
+  def entry?(event)
+    entries.include?(event)
   end
 
   private

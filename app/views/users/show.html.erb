@@ -24,8 +24,7 @@
     <tbody>
       <% @entries.each do |entry| %>
         <tr>
-          <!-- NOTE:event_pathでよい？ -->
-          <td><%= link_to entry.title, event_path(event) %></td>
+          <td><%= link_to entry.title, event_path(entry) %></td>
           <td><%= entry.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= entry.end_date.strftime("%Y-%m-%d %H:%M") %></td>
         </tr>
       <% end %>

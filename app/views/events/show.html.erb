@@ -1,9 +1,18 @@
 <% provide :title, @event.title %>
 
-<p><%= @event.content %></p>
-
-<% if owner?(@event) %>
-  <div>
-    <%= link_to "編集", edit_event_path(@event), class: "btn btn-primary" %>
-  </div>
-<% end %>
+<div class="align-center">
+  <p><%= @event.content %></p>
+  <% if owner?(@event) %>
+    <%= link_to "編集する", edit_event_path(@event), class: "button" %>
+  <% else %>
+    <%= form_for(current_user.members.build) do |f|%>
+      <%= hidden_field_tag :event_id, @event.id %>
+      <!-- 既に参加登録済みだった場合 -->
+      <% if current_user.entry?(@event) %>
+        <%= f.submit "参加する", class: "button disabled" %>
+      <% else %>
+        <%= f.submit "参加する", class: "button" %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

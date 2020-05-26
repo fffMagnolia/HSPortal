@@ -18,7 +18,7 @@
         <tr>
           <td><%= link_to event.title, event_path(event) %></td>
           <td><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= link_to event.user.name, user_path(current_user) %></td>
+          <td><%= link_to event.user.name, user_path(event.user) %></td>
         </tr>
       <% end %>
     </tbody>

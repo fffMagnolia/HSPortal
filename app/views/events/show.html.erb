@@ -2,7 +2,10 @@
 
 <div class="align-center">
   <p><%= @event.content %></p>
-  <% if owner?(@event) %>
+  <!-- ゲストユーザーの場合 -->
+  <% if !logged_in? %>
+    <p>※イベントの参加にはユーザー登録が必要です。登録は<%= link_to "こちら", signup_path %></p>
+  <% elsif owner?(@event) %>
     <%= link_to "編集する", edit_event_path(@event), class: "button" %>
   <% else %>
     <%= form_for(current_user.members.build) do |f|%>

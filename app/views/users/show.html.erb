@@ -10,9 +10,31 @@
         <%= link_to "削除", user_path, method: :delete, data: { confirm: '退会後のデータ復旧はできません。また主宰したイベントの情報も同時に削除されます。退会しますか？' }, class: "button " %>
       <% end %>
     </div>
-  <h4 class="headline">開催したイベント: <%= @user.events.count %>件</h4>
 </div>
 
+<div class="align-center"><h4 class="headline">参加予定のイベント: <%= @user.entries.count %>件</h4></div>
+<div class="table-wrapper event-list">
+  <table class="center">
+    <thead>
+      <tr>
+        <th>イベントタイトル</th>
+        <th>開始日時 - 終了日時</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @entries.each do |entry| %>
+        <tr>
+          <!-- NOTE:event_pathでよい？ -->
+          <td><%= link_to entry.title, event_path(event) %></td>
+          <td><%= entry.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= entry.end_date.strftime("%Y-%m-%d %H:%M") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @events %>
+</div>
+
+<div class="align-center"><h4 class="headline">開催したイベント: <%= @user.events.count %>件</h4></div>
 <div class="table-wrapper event-list">
   <table class="center">
     <thead>

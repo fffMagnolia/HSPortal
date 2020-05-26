@@ -2,29 +2,30 @@
   <%= form_for(@event) do |f| %>
     <%= render 'partial/error_messages', object: f.object %>
     <div class="field">
-      <%= f.label :title%>
+      <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title %>
     </div>
     <div class="field">
-      <%= f.label :content %> 
+      <%= f.label :content, '詳細内容' %> 
       <%= f.text_area :content, size: '80x15' %>
     </div>
     <div class="field half first">
-      <%= f.label :start_date %>
-      <div class="input-group date" id="start_date_picker" data-target-input="nearest">
-        <!-- NOTE: iconを押さないとcalendarが非表示にならない -->
+      <%= f.label :start_date, '開始日時' %>
+      <div class="input-group date" id="startdatepicker" data-target-input="nearest">
         <%= f.text_field :start_date, class: "form-control datetimepicker-input" %>
-        <!--input type="text" class="form-control datetimepicker-input" data-target="#start_date_picker"/-->
-        <div class="input-group-append" data-target="#start_date_picker" data-toggle="datetimepicker"></div>
-        <div class="input-group-text" data-target="#start_date_picker"><i class="fa fa-calendar"></i></div>
+        <!--input type="text" class="form-control datetimepicker-input" data-target="#startdatepicker"/-->
+        <div class="input-group-append" data-target="#startdatepicker" data-toggle="datetimepicker">
+          <div class="input-group-text" data-target="#startdatepicker"><i class="fa fa-calendar"></i></div>
+        </div>
       </div>
     </div>
     <div class="field half">
-      <%= f.label :end_date %>
-      <div class="input-group date" id="start_date_picker" data-target-input="nearest">
+      <%= f.label :end_date, '終了日時' %>
+      <div class="input-group date" id="enddatepicker" data-target-input="nearest">
         <%= f.text_field :end_date , class: "form-control datetimepicker-input" %>
-        <div class="input-group-append" data-target="#end_date_picker" data-toggle="datetimepicker"></div>
-        <div class="input-group-text" data-target="#end_date_picker"><i class="fa fa-calendar"></i></div>
+        <div class="input-group-append" data-target="#enddatepicker" data-toggle="datetimepicker">
+          <div class="input-group-text" data-target="#enddatepicker"><i class="fa fa-calendar"></i></div>
+        </div>
       </div>
     </div>
     <ul class="actions">

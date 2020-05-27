@@ -12,6 +12,11 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+    # 定員数の設定がされていない場合、デフォルトの値を設定
+    if @event.capacity.nil?
+      # call from event_helper
+      set_default_capacity(event)
+    end
     if @event.save
       flash[:success] = "イベント[#{@event.title}]を作成しました。"
       redirect_to events_url
@@ -42,7 +47,7 @@ class EventsController < ApplicationController
 
     # user_idを弄れないようにしている
     def event_params
-      params.require(:event).permit(:title, :content, :start_date, :end_date)
+      params.require(:event).permit(:title, :content, :start_date, :end_date, :capacity)
     end
 
 end

@@ -1,6 +1,7 @@
 <% provide :title, @event.title %>
 
 <div class="align-center">
+  <p>定員<%= @event.capacity %>名</p>
   <p><%= @event.content %></p>
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>

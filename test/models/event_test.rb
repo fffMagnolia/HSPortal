@@ -34,6 +34,21 @@ class EventTest < ActiveSupport::TestCase
     @event.title = nil
     assert_not @event.valid?
   end
+
+  test "expect capacity present" do
+    @event.capacity = nil
+    assert_not @event.valid?
+  end
+  
+  test "expect capacity min 1" do
+    @event.capacity = 0
+    assert_not @event.valid?
+  end
+
+  test "expect capacity assert only integer" do
+    @event.capacity = '0'
+    assert_not @event.valid?
+  end
   
   test "expect content max char 500" do
     @event.content = "a"*501

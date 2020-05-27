@@ -10,5 +10,5 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :title, presence: true, length: { maximum: 50 }
-
+  validates :capacity, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 end

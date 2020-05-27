@@ -5,6 +5,11 @@
       <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title %>
     </div>
+    <div class="field half first">
+      <%= f.label :capacity, '定員' %>
+      <%#= 表示確認必須 %>
+      <%= f.number_field :capacity %>
+    </div>
     <div class="field">
       <%= f.label :content, '詳細内容' %> 
       <%= f.text_area :content, size: '80x15' %>

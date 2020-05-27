@@ -30,5 +30,11 @@ user = User.first
   content = Faker::Quotes::Shakespeare.hamlet_quote
   r = Random.new
   random_time = Time.zone.now + r.rand(24*60*60)
-  user.events.create!(content: content, start_date: random_time, end_date: Time.zone.now, title: "New Event #{n+1}") 
+  user.events.create!(
+    content: content,
+    start_date: random_time,
+    end_date: Time.zone.now,
+    title: "New Event #{n+1}",
+    capacity: rand(1..30)
+  ) 
 end

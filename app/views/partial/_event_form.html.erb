@@ -9,23 +9,24 @@
       <%= f.label :content, '詳細内容' %> 
       <%= f.text_area :content, size: '80x15' %>
     </div>
+    <!-- start-date -->
     <div class="field half first">
       <%= f.label :start_date, '開始日時' %>
-      <div class="input-group date" id="startdatepicker" data-target-input="nearest">
-        <%= f.text_field :start_date, class: "form-control datetimepicker-input" %>
-        <!--input type="text" class="form-control datetimepicker-input" data-target="#startdatepicker"/-->
-        <div class="input-group-append" data-target="#startdatepicker" data-toggle="datetimepicker">
-          <div class="input-group-text" data-target="#startdatepicker"><i class="fa fa-calendar"></i></div>
-        </div>
+      <div class="input-group date" id="startdate" data-target-input="nearest">
+          <%= f.text_field :start_date, class: "form-control startdate"%>
+          <div class="input-group-append" data-target="#startdate" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
       </div>
     </div>
+    <!-- end-date -->
     <div class="field half">
       <%= f.label :end_date, '終了日時' %>
-      <div class="input-group date" id="enddatepicker" data-target-input="nearest">
-        <%= f.text_field :end_date , class: "form-control datetimepicker-input" %>
-        <div class="input-group-append" data-target="#enddatepicker" data-toggle="datetimepicker">
-          <div class="input-group-text" data-target="#enddatepicker"><i class="fa fa-calendar"></i></div>
-        </div>
+      <div class="input-group date" id="enddate" data-target-input="nearest">
+          <%= f.text_field :end_date , class: "form-control enddate-input" %>
+          <div class="input-group-append" data-target="#enddate" data-toggle="datetimepicker">
+              <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+          </div>
       </div>
     </div>
     <ul class="actions">

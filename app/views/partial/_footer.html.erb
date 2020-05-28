@@ -2,12 +2,16 @@
 <footer id="footer">
   <div class="inner">
     <!-- link -->
-    <div class="row">
-      <ul>
-        <li><%= link_to "Q&A", help_path %></li>
-        <li><%= link_to "お問い合わせ", contact_path %></li>
-        <li><%= link_to "利用規約", policy_path %></li>
-      </ul>
+    <div class="flex justify-content-center">
+      <div class="mx-3 my-1">
+        <%= link_to "Q&A", help_path %>
+      </div>
+      <div class="mx-3 my-1">
+        <%= link_to "お問い合わせ", contact_path %>
+      </div>
+      <div class="mx-3 my-1">
+        <%= link_to "利用規約", policy_path %>
+      </div>
     </div>
     <div class="copyright">
       Copyright &copy; HSPortal 2020

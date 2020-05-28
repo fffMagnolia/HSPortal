@@ -1,26 +1,38 @@
-<!-- banner下部だった箇所 -->
-<div id="welcome_info">
-  <div class="flex">
-    <div>
-      <span class="icon fas fa-search"></span>
-      <h3>知る</h3>
-      <p>HSPとはなんでしょうか？</p>
-    </div>
-    <div>
-      <span class="icon far fa-paper-plane"></span>
-      <h3>聞く</h3>
-      <p>誰かに相談してみませんか？</p>
-    </div>
-    <div>
-      <span class="icon far fa-comments"></span>
-      <h3>話す</h3>
-      <p>イベントの主催・参加ができます</p>
-    </div>
+<!-- ログイン済みのユーザにはinformartionを表示-->
+<% if logged_in? %>
+  <div id="user_information" class="align-center box">
+    <h4>Information</h4>
+    <ul class="alt">
+      <li>sample information1</li>
+      <li>sample information2</li>
+      <li>sample information3</li>
+    </ul>
   </div>
-  <footer>
-    <%= link_to "Get Started", signup_path, class: "button" %>
-  </footer>
-</div>
+<% else %>
+<!-- banner下部だった箇所 -->
+  <div id="welcome_info">
+    <div class="flex">
+      <div>
+        <span class="icon fas fa-search"></span>
+        <h3>知る</h3>
+        <p>HSPとはなんでしょうか？</p>
+      </div>
+      <div>
+        <span class="icon far fa-paper-plane"></span>
+        <h3>聞く</h3>
+        <p>誰かに相談してみませんか？</p>
+      </div>
+      <div>
+        <span class="icon far fa-comments"></span>
+        <h3>話す</h3>
+        <p>イベントの主催・参加ができます</p>
+      </div>
+    </div>
+    <footer>
+      <%= link_to "Get Started", signup_path, class: "button" %>
+    </footer>
+  </div>
+<% end %>
 
 <!-- three -->
 <section id="three" class="wrapper align-center">

@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+イベントエントリー不可条件：
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 主催者である
+* 以前に予約したことがある
+* イベントの申込期限（開始日時の1時間以上前）を過ぎている
+* イベントの予約数が定員に達している

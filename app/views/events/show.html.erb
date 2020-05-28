@@ -6,7 +6,7 @@
   <% else %>
     <b>定員<%= @event.entries.count %>/<%= @event.capacity %>名</b>
   <% end %>
-  <p><%= @event.content %></p>
+  <p><%= safe_join(@event.content.split("\n"), tag(:br)) %></p>
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>
     <p>※イベントの参加にはユーザー登録が必要です。登録は<%= link_to "こちら", signup_path %></p>

@@ -16,7 +16,8 @@
     <%= form_for(current_user.members.build) do |f|%>
       <%= hidden_field_tag :event_id, @event.id %>
       <!-- 既に参加登録済みだった場合 -->
-      <% if current_user.entry?(@event) %>
+      <%# if current_user.entry?(@event) %>
+      <% if current_user.entry_possible?(@event) %>
         <%= f.submit "参加する", class: "button disabled" %>
       <% else %>
         <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>

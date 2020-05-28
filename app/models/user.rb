@@ -80,18 +80,6 @@ class User < ApplicationRecord
     entries.include?(event)
   end
 
-  def entry_possible?(event)
-    # 以前に参加予約をしていない
-    !current_user.entry?(event)
-    # 主催者ではない（ビュー側で選別されているのでコメントで表記するのみ）
-    !owner?(event)
-    # 開始時刻1時間前以前である
-    entry_limit = event.start_date - 1.hours
-    entry_limit > Time.zone.now
-    # 定員数に達していない
-    event.entries.count <= event.capacity
-  end
-
   private
 
   def create_activation_digest

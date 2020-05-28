@@ -1,14 +1,14 @@
 <div class="flex justify-content-center">
   <%= form_for(@event) do |f| %>
     <%= render 'partial/error_messages', object: f.object %>
-    <div class="field">
+    <div class="field half first">
       <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title %>
     </div>
-    <div class="field half first">
+    <div class="field half">
       <%= f.label :capacity, '定員' %>
       <%#= 表示確認必須 %>
-      <%= f.number_field :capacity %>
+      <%= f.number_field :capacity %>人
     </div>
     <div class="field">
       <%= f.label :content, '詳細内容' %> 

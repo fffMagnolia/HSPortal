@@ -1,7 +1,11 @@
 <% provide :title, @event.title %>
 
 <div class="align-center">
-  <p>定員<%= @event.capacity %>名</p>
+  <% if @event.entries.count > @event.capacity %>
+    <b class="text-danger">定員<%= @event.entries.count %>/<%= @event.capacity %>名</b>
+  <% else %>
+    <b>定員<%= @event.entries.count %>/<%= @event.capacity %>名</b>
+  <% end %>
   <p><%= @event.content %></p>
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>
@@ -15,7 +19,7 @@
       <% if current_user.entry?(@event) %>
         <%= f.submit "参加する", class: "button disabled" %>
       <% else %>
-        <%= f.submit "参加する", class: "button" %>
+        <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>
       <% end %>
     <% end %>
   <% end %>

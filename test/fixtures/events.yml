@@ -5,6 +5,7 @@ one:
   start_date: <%= 10.minutes.ago %>
   end_date: <%= Time.zone.now %>
   title: "one event"
+  capacity: 5
   user: alice
 
 two:
@@ -12,6 +13,7 @@ two:
   start_date: <%= 3.years.ago %>
   end_date: <%= Time.zone.now %>
   title: "two event"
+  capacity: 5
   user: marchhere
 
 three:
@@ -19,6 +21,7 @@ three:
   start_date: <%= 2.hours.ago %>
   end_date: <%= Time.zone.now %>
   title: "three event"
+  capacity: 5
   user: alice
 
 most_recent:
@@ -26,6 +29,7 @@ most_recent:
   start_date: <%= Time.zone.now %>
   end_date: <%= Time.zone.now + 1.hours %>
   title: "most recent event"
+  capacity: 5
   user: alice
 
 <% 30.times do |n| %>
@@ -34,5 +38,6 @@ event_<%= n %>:
   start_date: <%= 1.days.ago %>
   end_date: <%= Time.zone.now %>
   title: <%= Faker::Dessert.variety %>
+  capacity: 5
   user: alice
 <% end %>

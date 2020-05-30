@@ -51,7 +51,7 @@ module SessionsHelper
   end
 
   # イベント主催者であることを期待している
-  def owner?(event)
-    current_user.id == event.user_id
-  end
+#  def owner?(event)
+#    current_user.id == event.user_id
+#  end
 end

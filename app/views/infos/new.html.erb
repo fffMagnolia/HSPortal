@@ -1,0 +1,23 @@
+<% provide :title, @event.title %>
+<% provide :button_text, '送信する' %>
+
+<div class="flex justify-content-center">
+  <%= form_for(@event.infos.build) do |f| %>
+    <%= render 'partial/error_messages', object: f.object %>
+    <%= hidden_field_tag :event_id, @event.id %>
+    <div class="field">
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :message, 'メッセージ' %>
+      <%= f.text_area :message, size: '80x15' %>
+    </div>
+
+    <ul class="actions">
+      <li><%= f.submit yield(:button_text), class: 'btn' %></li>
+    </ul>
+  <% end %>
+</div>
+
+

@@ -47,9 +47,11 @@
         <tr>
           <td><%= link_to event.title, event_path(event) %></td>
           <td><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></td>
+          <td><%= link_to "メッセージを作成する", new_info_path(event_id: event.id), class: "button" %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <%= will_paginate @events %>
 </div>
+<%= debug(params) if Rails.env.development? %>

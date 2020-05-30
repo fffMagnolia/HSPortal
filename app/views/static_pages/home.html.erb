@@ -2,11 +2,9 @@
 <% if logged_in? %>
   <div id="user_information" class="align-center box">
     <h4>Information</h4>
-    <ul class="alt">
-      <li>sample information1</li>
-      <li>sample information2</li>
-      <li>sample information3</li>
-    </ul>
+    <% if @entries.any? %>
+      <%= render @entries %>
+    <% end %>
   </div>
 <% else %>
 <!-- banner下部だった箇所 -->

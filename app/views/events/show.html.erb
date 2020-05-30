@@ -10,12 +10,13 @@
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>
     <p>※イベントの参加にはユーザー登録が必要です。登録は<%= link_to "こちら", signup_path %></p>
-  <% elsif owner?(@event) %>
+  <%# elsif owner?(@event) %>
+  <% elsif current_user.id == @event.user_id %>
     <%= link_to "編集する", edit_event_path(@event), class: "button" %>
   <% else %>
     <%= form_for(current_user.members.build) do |f|%>
       <%= hidden_field_tag :event_id, @event.id %>
-      <% if !current_user.entry?(@event) && !owner?(@event) && capacity_over?(@event) && time_over?(@event) %>
+      <% if !current_user.entry?(@event) && !(current_user.id == @event.user_id) && !capacity_over?(@event) && !time_over?(@event) %>
         <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>
       <!-- 既に参加登録済みだった場合 -->
       <% else %>

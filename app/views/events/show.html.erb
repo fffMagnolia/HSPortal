@@ -10,7 +10,7 @@
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>
     <p>※イベントの参加にはユーザー登録が必要です。登録は<%= link_to "こちら", signup_path %></p>
-  <%# elsif owner?(@event) %>
+  <!-- 主催者の場合 -->
   <% elsif current_user.id == @event.user_id %>
     <%= link_to "編集する", edit_event_path(@event), class: "button" %>
   <% else %>
@@ -20,7 +20,7 @@
         <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>
       <!-- 既に参加登録済みだった場合 -->
       <% else %>
-        <%= f.submit "参加する", class: "button disabled" %>
+        <p class="text-info">※参加登録済みです</p>
       <% end %>
     <% end %>
   <% end %>

@@ -20,8 +20,9 @@ class InfosController < ApplicationController
     @info = Info.find(params[:id])
   end
 
-  def destroy
-  end
+  # enhanceに回す
+  #def destroy
+  #end
 
   private
 

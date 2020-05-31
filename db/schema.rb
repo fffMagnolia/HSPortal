@@ -35,15 +35,6 @@ ActiveRecord::Schema.define(version: 2020_05_29_144820) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "informations", force: :cascade do |t|
-    t.text "message"
-    t.integer "event_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["event_id", "created_at"], name: "index_informations_on_event_id_and_created_at"
-    t.index ["event_id"], name: "index_informations_on_event_id"
-  end
-
   create_table "infos", force: :cascade do |t|
     t.text "message"
     t.integer "event_id", null: false
@@ -71,6 +62,5 @@ ActiveRecord::Schema.define(version: 2020_05_29_144820) do
   end
 
   add_foreign_key "events", "users"
-  add_foreign_key "informations", "events"
   add_foreign_key "infos", "events"
 end

@@ -13,28 +13,4 @@
   <meta name="author" content="">
 
   <title><%= full_title(yield(:title)) %></title>
-
-  <!-- for datetimepicker -->
-  <script type="text/javascript">
-  $(function () {
-    $('#startdate').datetimepicker({
-      format: "YYYY-MM-DD HH:mm",
-      minDate: Date.now(),
-      toolbarPlacement: 'top',
-      use24hours: true
-    });
-    $('#enddate').datetimepicker({
-      format: "YYYY-MM-DD HH:mm",
-      useCurrent: false,
-      toolbarPlacement: 'top',
-      use24hours: true
-    });
-    $("#startdate").on("change.datetimepicker", function (e) {
-        $('#enddate').datetimepicker('minDate', e.date);
-    });
-    $("#enddate").on("change.datetimepicker", function (e) {
-        $('#startdate').datetimepicker('maxDate', e.date);
-    });
-  });
-  </script>
 </head>

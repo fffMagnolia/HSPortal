@@ -22,4 +22,25 @@ import 'bootstrap';
 import '../stylesheets/application';
 import '../stylesheets/font-awesome.min';
 
+$(function () {
+  $('#startdate').datetimepicker({
+    format: "YYYY-MM-DD HH:mm",
+    minDate: Date.now(),
+    toolbarPlacement: 'top',
+    use24hours: true
+  });
+  $('#enddate').datetimepicker({
+    format: "YYYY-MM-DD HH:mm",
+    useCurrent: false,
+    toolbarPlacement: 'top',
+    use24hours: true
+  });
+  $("#startdate").on("change.datetimepicker", function (e) {
+      $('#enddate').datetimepicker('minDate', e.date);
+  });
+  $("#enddate").on("change.datetimepicker", function (e) {
+      $('#startdate').datetimepicker('maxDate', e.date);
+  });
+});
+
 

@@ -20,7 +20,8 @@ gem 'will_paginate', '3.1.7'
 gem 'faker', '2.11.0'
 gem 'sass-rails', '6.0.0'
 gem 'bootstrap4-datetime-picker-rails', '0.3.1'
-# for datapicker
+
+gem 'letter_opener', '1.7.0'
 
 
 group :development, :test do

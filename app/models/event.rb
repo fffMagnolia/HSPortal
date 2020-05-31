@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :entries, class_name: 'Entry', foreign_key: 'event_id', dependent: :destroy
-  has_many :members, through: :entries, source: :user
-  has_many :infos
+  has_many :members, through: :entries, source: :user, dependent: :destroy
+  has_many :infos, dependent: :destroy
 
   default_scope -> { order(start_date: :desc) }
     

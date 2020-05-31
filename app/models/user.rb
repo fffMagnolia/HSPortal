@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # user->entry
   has_many :members, class_name: 'Entry', foreign_key: 'user_id', dependent: :destroy
   # entry->user
-  has_many :entries, through: :members, source: 'event'
+  has_many :entries, through: :members, source: 'event', dependent: :destroy
 
   attr_accessor :remember_token, :activation_token, :reset_token
 

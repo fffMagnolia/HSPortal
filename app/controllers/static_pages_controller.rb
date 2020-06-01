@@ -4,8 +4,6 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @entries = current_user.entries
     end
-    # 作成者表示に用いる
-    @producer = User.find(1)
   end
 
   def help

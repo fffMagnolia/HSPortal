@@ -47,12 +47,14 @@
         </header>
      </article>
       <article>
+        <!-- ユーザーページに通すのが理想。現状はテストが通らないのでtwitterで代用 -->
         <div class="image round explain">
-            <%= gravatar_for @producer, size: '150' %>
-          <%#= image_tag 'pic02.jpg', alt: "Pic 02" %>
+            <%#= gravatar_for @producer, size: '150' %>
+          <%= image_tag 'pic02.jpg', alt: "Pic 02" %>
         </div>
         <header>
-          <h4 class="intro-link"><%= link_to '作った人', user_path(@producer) %></h4>
+          <!--h4 class="intro-link"><%#= link_to '作った人', user_path(@producer) %></h4-->
+          <%= link_to '作った人', 'https://twitter.com/fffMagnolia' %>
         </header>
       </article>
     </div>

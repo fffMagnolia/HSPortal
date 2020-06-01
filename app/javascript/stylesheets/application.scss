@@ -12,6 +12,11 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
 
+/* add for home */
+.intro-link {
+	color: #6cc091;
+}
+
 /* add for main content */
 .main {
 	margin-top: 1em;
@@ -2273,7 +2278,11 @@
 
 		.image.round img {
 			border-radius: 100%;
+			// explain imageのため追加。
+			width: 150px;
+			height: 150px;
 		}
+
 
 		.image.left {
 			float: left;

@@ -7,7 +7,7 @@
     <div class="actions ">
       <% if @user == current_user %>
         <%= link_to "編集", edit_user_path(current_user), class: "button " %>
-        <%= link_to "削除", user_path, method: :delete, data: { confirm: '退会後のデータ復旧はできません。また主宰したイベントの情報も同時に削除されます。退会しますか？' }, class: "button " %>
+        <%= link_to "退会", user_path, method: :delete, data: { confirm: '退会後のデータ復旧はできません。また主宰したイベントの情報も同時に削除されます。退会しますか？' }, class: "button text-danger" %>
       <% end %>
     </div>
 </div>
@@ -54,4 +54,3 @@
   </table>
   <%= will_paginate @events %>
 </div>
-<%= debug(params) if Rails.env.development? %>

@@ -4,10 +4,12 @@
     <h4>Information</h4>
     <% if @entries.any? %>
       <%= render @entries %>
+    <% else %>
+      <p>参加イベント主催者からのメッセージがここに表示されます。</p>
     <% end %>
   </div>
 <% else %>
-<!-- banner下部だった箇所 -->
+<!-- 元デザインでbanner下部だった箇所 -->
   <div id="welcome_info">
     <div class="flex">
       <div>
@@ -27,7 +29,7 @@
       </div>
     </div>
     <footer>
-      <%= link_to "Get Started", signup_path, class: "button" %>
+      <%= link_to "始める", signup_path, class: "button" %>
     </footer>
   </div>
 <% end %>
@@ -38,35 +40,20 @@
     <div class="flex flex-2">
       <article>
         <div class="image round">
-          <%= image_tag "pic01.jpg", :alt => "Pic 01" %>
+          <%= image_tag "sakura.jpg", :alt => "Sakura" %>
         </div>
         <header>
-          <h3>製作者1<br />よろしくお願いします</h3>
+          <h4 class="intro-link"><%= link_to 'HSP(Higly Sensitive Person)とは？', explain_path %></h4>
         </header>
-        <p>
-          なんかそれっぽいことを<br />
-          三行に分けて<br />
-          書いたらいいのでは<br />
-        </p>
-        <footer>
-          <a href="#" class="button">Learn More</a>
-        </footer>
-      </article>
+     </article>
       <article>
-        <div class="image round">
-          <%= image_tag 'pic02.jpg', alt: "Pic 02" %>
+        <div class="image round explain">
+            <%= gravatar_for @producer, size: '150' %>
+          <%#= image_tag 'pic02.jpg', alt: "Pic 02" %>
         </div>
         <header>
-          <h3>製作者2<br />よろしくお願いします</h3>
+          <h4 class="intro-link"><%= link_to '作った人', user_path(@producer) %></h4>
         </header>
-        <p>
-          なんかそれっぽいことを<br />
-          三行に分けて<br />
-          書いたらいいのでは<br />
-        </p>
-        <footer>
-          <a href="#" class="button">Learn More</a>
-        </footer>
       </article>
     </div>
   </div>

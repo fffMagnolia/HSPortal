@@ -5,7 +5,7 @@ class EntriesTest < ActionDispatch::IntegrationTest
     @alice = users(:alice)
     @marchhere = users(:marchhere)
     @duchess = users(:duchess)
-    @alice_event = events(:one)
+    @alice_event = events(:four)
     @marchhere_event = events(:two)
   end
 

@@ -2,7 +2,7 @@
 
 one:
   content: "One Event"
-  start_date: <%= Time.zone.now + 2.hours %>
+  start_date: <%= 10.minutes.ago %>
   end_date: <%= Time.zone.now %>
   title: "one event"
   capacity: 5
@@ -24,9 +24,17 @@ three:
   capacity: 5
   user: alice
 
+four:
+  content: "Four Event"
+  start_date: <%= Time.zone.now + 2.hours %>
+  end_date: <%= Time.zone.now + 4.hours %>
+  title: "four Event"
+  capacity: 5
+  user: alice
+
 most_recent:
   content: "Most recent Event"
-  start_date: <%= Time.zone.now %>
+  start_date: <%= Time.zone.now + 4.hours %>
   end_date: <%= Time.zone.now + 1.hours %>
   title: "most recent event"
   capacity: 5

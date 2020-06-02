@@ -28,4 +28,16 @@ class ActionDispatch::IntegrationTest
       remember_me: remember_me
     } }
   end
+
+  # SessionHelperとほぼ同じ
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+  end
+
+  def log_out(user)
+    forget(user)
+    session.delete(:user_id)
+  end
 end

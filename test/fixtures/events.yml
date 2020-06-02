@@ -2,7 +2,7 @@
 
 one:
   content: "One Event"
-  start_date: <%= 10.minutes.ago %>
+  start_date: <%= Time.zone.now + 2.hours %>
   end_date: <%= Time.zone.now %>
   title: "one event"
   capacity: 5

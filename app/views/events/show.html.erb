@@ -13,15 +13,13 @@
   <!-- 主催者の場合 -->
   <% elsif current_user.id == @event.user_id %>
     <%= link_to "編集する", edit_event_path(@event), class: "button" %>
-  <% else %>
+  <% elsif !(current_user.id == @event.user_id) && !current_user.entry?(@event) && !capacity_over?(@event) && !time_over?(@event) %>
     <%= form_for(current_user.members.build) do |f|%>
       <%= hidden_field_tag :event_id, @event.id %>
-      <% if !current_user.entry?(@event) && !(current_user.id == @event.user_id) && !capacity_over?(@event) && !time_over?(@event) %>
-        <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>
-      <!-- 既に参加登録済みだった場合 -->
-      <% else %>
-        <p class="text-info">※参加登録済みです</p>
-      <% end %>
+      <%= f.submit "参加する", class: "button", data: { confirm: "イベント[#{@event.title}]に参加しますか？" } %>
     <% end %>
+  <!-- エントリーできない場合 -->
+  <% else %>
+    <p class="text-info">※参加登録済みか、登録できない状態です。</p>
   <% end %>
 </div>

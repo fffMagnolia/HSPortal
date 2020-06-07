@@ -1,5 +1,13 @@
 # README
 
+使用技術:
+
+* Rails6
+* Bootstrap4
+* Docker&docker-compose
+* Tempusdominus
+
+
 イベントエントリー不可条件：
 
 * 主催者である

@@ -10,24 +10,22 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'email_validator', '2.0.1'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'will_paginate', '3.1.7'
 gem 'faker', '2.11.0'
 gem 'sass-rails', '6.0.0'
 gem 'bootstrap4-datetime-picker-rails', '0.3.1'
-
-gem 'letter_opener', '1.7.0'
-
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Reduces boot times through caching; required in config/boot.rb
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '1.4'
   gem 'warning'
+  gem 'letter_opener', '1.7.0'
 end
 
 group :development do

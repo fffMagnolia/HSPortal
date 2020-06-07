@@ -17,6 +17,10 @@
       <%= f.label :password_confirmation, 'パスワード確認' %>
       <%= f.password_field :password_confirmation %>
     </div>
+    <div class="field">
+      <%= f.label :message, 'メッセージ' %>
+      <%= f.text_area :message, size: '40x10' %>
+    </div>
     <ul class="actions">
       <li><%= f.submit yield(:button_text), class: 'btn' %></li>
     </ul>

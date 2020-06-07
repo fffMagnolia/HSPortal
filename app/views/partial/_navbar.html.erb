@@ -1,33 +1,41 @@
-<!--header -->
 <header id="header">
-  <div class="inner">
-    <strong><%= link_to "HSPortal", root_path, class: "logo" %></strong>
-    <!-- 規程幅以下になった場合の表示 -->
-    <!-- 優先順位的に後回しにしている。 
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    -->
-    <nav id="nav">
-      <%= link_to "News", "#" %>
-      <%= link_to "Posts", "#" %>
-      <%= link_to "Events", events_path %>
-      <% if logged_in? %>
-        <!--
-        <div class="dropdown">
-          <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item" %>
+  <div class="">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <strong><%= link_to "HSPortal", root_path, class: "navbar-brand text-white" %></strong>
+      <span class="navbar-toggler" data-toggle="collapse" data-target="#nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="menu">
+        <i class="fa fa-bars"></i>
+      </span>
+      <div class="collapse navbar-collapse" id="nav-menu">
+        <div class="navbar-nav">
+          <!--
+          <div class="nav-item">
+            <%#= link_to "News", "#", class: "nav-link" %>
           </div>
+          <div class="nav-item">
+            <%#= link_to "Posts", "#" %>
+          </div>
+          -->
+          <div class="nav-item">
+            <%= link_to "Events", events_path, class: "nav-link" %>
+          </div>
+          <% if logged_in? %>
+          <div class="nav-item">
+            <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+          </div>
+          <div class="nav-item">
+            <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          </div>
+          <% else %>
+          <div class="nav-item">
+              <%= link_to "Sign up", signup_path, class: "nav-link" %>
+          </div>
+          <div class="nav-item">
+              <%= link_to "Login", login_path, class: "nav-link" %>
+          </div>
+          <% end %>
         </div>
-        -->
-            <%= link_to "Profile", user_path(current_user), class: "" %>
-            <%= link_to "Logout", logout_path, method: :delete, class: "" %>
-      <% else %>
-        <%= link_to "Sign up", signup_path %>
-        <%= link_to "Login", login_path %>
-      <% end %>
+      </div>
     </nav>
+
   </div>
 </header>

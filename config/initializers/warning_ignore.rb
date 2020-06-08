@@ -1,4 +1,4 @@
-if !Rails.env.development?
+if Rails.env.development?
   Gem.path.each do |path|
     Warning.ignore(//, path)
   end

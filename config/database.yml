@@ -25,5 +25,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { 'postgres' }  %>
+  database: db/production.postgres

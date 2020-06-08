@@ -16,7 +16,7 @@ WORKDIR /HSPortal
 COPY Gemfile /HSPortal/Gemfile
 COPY Gemfile.lock /HSPortal/Gemfile.lock
 COPY package.json /HSPortal/package.json
-COPY package-lock.json /HSPortal/package-lock.json
+#COPY package-lock.json /HSPortal/package-lock.json
 COPY yarn.lock /HSPortal/yarn.lock
 
 # localとコンテナでbundlerのバージョンを合わせないとエラーがでる

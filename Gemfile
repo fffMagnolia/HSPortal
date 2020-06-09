@@ -45,4 +45,6 @@ end
 
 group :production do
   gem 'pg', '1.2.3'
+  # herokuで詳細なログが見れる
+  gem 'rails_12factor'
 end

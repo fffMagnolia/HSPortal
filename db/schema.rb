@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_29_144820) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "entries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_144820) do
     t.text "content"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
@@ -37,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_144820) do
 
   create_table "infos", force: :cascade do |t|
     t.text "message"
-    t.integer "event_id", null: false
+    t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"

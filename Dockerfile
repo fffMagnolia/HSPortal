@@ -20,7 +20,7 @@ COPY package.json /HSPortal/package.json
 COPY yarn.lock /HSPortal/yarn.lock
 
 # localとコンテナでbundlerのバージョンを合わせないとエラーがでる
-RUN gem install bundler -v 2.1.2
+RUN gem install bundler -v 2.1.4
 RUN bundle install
 # Bootstrap、Tempusdominus(DatetimePicker)周りのインストール
 RUN yarn install

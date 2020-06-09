@@ -43,7 +43,7 @@
           <%= image_tag "sakura.jpg", :alt => "Sakura" %>
         </div>
         <header>
-          <h4 class="intro-link"><%= link_to 'HSP(Higly Sensitive Person)とは？', explain_path %></h4>
+          <%= link_to 'HSP(Higly Sensitive Person)とは？', explain_path, class: "intro-link" %>
         </header>
      </article>
       <article>
@@ -54,7 +54,7 @@
         </div>
         <header>
           <!--h4 class="intro-link"><%#= link_to '作った人', user_path(@producer) %></h4-->
-          <%= link_to '作った人', 'https://twitter.com/fffMagnolia' %>
+          <%= link_to 'バグ報告(別サイトに移動します)', 'https://github.com/fffMagnolia/HSPortal.git' %>
         </header>
       </article>
     </div>

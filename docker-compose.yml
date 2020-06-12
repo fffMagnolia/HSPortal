@@ -6,6 +6,7 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
+      
   web:
     build: .
     environment:

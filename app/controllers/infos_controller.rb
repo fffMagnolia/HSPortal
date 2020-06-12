@@ -1,5 +1,6 @@
 class InfosController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :show, :destroy]
+  before_action :owner,          only: [:new, :create, :destroy]
 
   def new
     @event = Event.find(params[:event_id])
@@ -31,5 +32,7 @@ class InfosController < ApplicationController
     end
 
     def owner
+      @event = Event.find(params[:id])
+      redirect_to root_url if @event.owner_id != current_user.id
     end
 end

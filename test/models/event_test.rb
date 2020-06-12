@@ -62,6 +62,6 @@ class EventTest < ActiveSupport::TestCase
 
   # 最新のものから表示するよう設計
   test "expect order recent first" do
-    assert_equal events(:most_recent), Event.first
+    assert_equal events(:alice_event), Event.first
   end
 end

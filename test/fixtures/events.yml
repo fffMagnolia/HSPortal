@@ -32,7 +32,7 @@ four:
   capacity: 5
   user: alice
 
-most_recent:
+alice_event:
   content: "Most recent Event"
   start_date: <%= Time.zone.now + 4.hours %>
   end_date: <%= Time.zone.now + 1.hours %>

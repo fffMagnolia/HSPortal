@@ -911,10 +911,10 @@ module ActiveRecord
       # returning all the associated objects:
       #
       #   class Picture < ActiveRecord::Base
-      #     has_many :most_recent_comments, -> { order('id DESC').limit(10) }, class_name: 'Comment'
+      #     has_many :alice_event_comments, -> { order('id DESC').limit(10) }, class_name: 'Comment'
       #   end
       #
-      #   Picture.includes(:most_recent_comments).first.most_recent_comments # => returns all associated comments.
+      #   Picture.includes(:alice_event_comments).first.alice_event_comments # => returns all associated comments.
       #
       # Eager loading is supported with polymorphic associations.
       #

@@ -4,7 +4,7 @@ class EntryTest < ActiveSupport::TestCase
   def setup
     @entry = Entry.new(
       user_id:  users(:alice).id,
-      event_id: events(:most_recent).id
+      event_id: events(:alice_event).id
     )
   end
 

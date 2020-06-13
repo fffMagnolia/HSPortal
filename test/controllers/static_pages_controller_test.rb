@@ -11,7 +11,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get help" do
     get help_path
     assert_response :success
-    assert_select "title", "Help | HSPortal"
+    assert_select "title", "Q&A | HSPortal"
   end
 
   test "should get contact" do
@@ -23,6 +23,6 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   test "should get policy" do
     get policy_path
     assert_response :success
-    assert_select "title", "Policy | HSPortal"
+    assert_select "title", "利用規約 | HSPortal"
   end
 end

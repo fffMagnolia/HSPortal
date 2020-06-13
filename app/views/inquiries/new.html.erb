@@ -1,0 +1,16 @@
+<% provide :title, 'お問い合わせ' %>
+<% provide :button_text, '送信する' %>
+
+<div class="flex justify-content-center">
+  <%= form_for(@inquiry) do |f| %>
+    <%= render 'partial/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :message, 'メッセージ(500文字以内でお願いします)' %>
+      <%= f.text_area :message, size: '80x10' %>
+    </div>
+
+    <ul class="actions">
+      <li><%= f.submit yield(:button_text), class: 'btn' %></li>
+    </ul>
+  <% end %>
+</div>

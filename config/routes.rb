@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # === static pages ===
   get '/explain', to: 'static_pages#explain'
   get '/help', to: 'static_pages#help'
-  get '/contact', to: 'static_pages#contact'
   get '/policy', to: 'static_pages#policy'
   # === rename ===
   get '/signup', to: 'users#new'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  get '/contact', to: 'inquiries#new'
 
   resources :users
   resources :account_activations, only: [:edit]

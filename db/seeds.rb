@@ -26,6 +26,7 @@ User.create!(
 )
 
 user = User.first
+# イベントの作成
 10.times do |n|
   content = Faker::Quotes::Shakespeare.hamlet_quote
   r = Random.new
@@ -38,3 +39,6 @@ user = User.first
     capacity: rand(1..30)
   ) 
 end
+
+# 問合せメッセージの作成
+user.inquiries.create!(message: '開催予定だったイベントを中止して削除したいです。どうしたらいいですか？')

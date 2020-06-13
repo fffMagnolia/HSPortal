@@ -1,0 +1,9 @@
+<%= @user.name %>さん
+
+<p><%= @event.title %>への参加予約が完了しました。</p>
+
+<p>開催日時：<%= @event.start_date.strftime("%Y-%m-%d %H:%M") %></p>
+<p>終了日時：<%= @event.end_date.strftime("%Y-%m-%d %H:%M") %></p>
+<p>内容：<%= @event.content %></p>
+
+<p>開催場所など詳細が記載されていない場合は後日主催者からお知らせがありますのでお待ちください。</p>

@@ -42,3 +42,7 @@ end
 
 # 問合せメッセージの作成
 user.inquiries.create!(message: '開催予定だったイベントを中止して削除したいです。どうしたらいいですか？')
+
+# イベントにエントリーさせる
+second_user = User.second
+second_user.members.create!(event_id: user.events.first.id)

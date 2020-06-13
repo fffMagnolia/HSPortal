@@ -5,6 +5,8 @@ class User < ApplicationRecord
   # entry->user
   has_many :entries, through: :members, source: 'event'
 
+  has_many :inquiries
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   before_create :create_activation_digest

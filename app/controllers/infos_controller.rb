@@ -21,9 +21,13 @@ class InfosController < ApplicationController
     @info = Info.find(params[:id])
   end
 
-  # enhanceに回す
-  #def destroy
-  #end
+  def destroy
+    @info = Info.find(params[:id])
+    @info_title = @info.title
+    @info.destroy
+    flash[:success] = "お知らせ#{@info_title}を削除しました。"
+    redirect_to root_url
+  end
 
   private
 

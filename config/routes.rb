@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   resources :entries, only: [:create]
   resources :infos, only: [:new, :create, :show, :destroy]
   resources :inquiries, only: [:new, :create]
+
+  # 最終行に書く必要があることに注意
+  get '*path', to: 'application#render_404'
 end

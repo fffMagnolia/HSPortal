@@ -1,11 +1,23 @@
 <% provide :title, @event.title %>
 
-<div class="align-center">
+<div class="align-center p-1 m-3">
   <% if @event.entries.count > @event.capacity %>
     <b class="text-danger">定員<%= @event.entries.count %>/<%= @event.capacity %>名</b>
   <% else %>
     <b>定員<%= @event.entries.count %>/<%= @event.capacity %>名</b>
   <% end %>
+  <!-- ownerかmemberの場合はお知らせを表示 -->
+  <% if (current_user.id == @event.user_id) || current_user.entry?(@event) %>
+    <h5>お知らせ</h5>
+    <% if @event.infos.any? %>
+        <% @event.infos.each do |info| %>
+          <div class=""><%= link_to info.title, event_info_path(@event, info) %></div>
+        <% end %>
+    <% else %>
+      <p>お知らせはありません</p>
+    <% end %>
+  <% end %>
+  <%#= textデータは改行して表示 %>
   <p><%= safe_join(@event.content.split("\n"), tag(:br)) %></p>
   <!-- ゲストユーザーの場合 -->
   <% if !logged_in? %>

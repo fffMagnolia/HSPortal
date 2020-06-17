@@ -1,4 +1,5 @@
 <% provide :title, @info.title %>
-<div class="align-center">
-  <%= @info.message %>
+<div class="align-center p-1 m-3">
+  <p><%= safe_join(@info.message.split("\n"), tag(:br)) %></p>
+  <%= link_to "削除", event_info_path(@event, @info), method: :delete, data: { confirm: 'お知らせを削除しますか？' }, class: "button text-danger" %>
 </div>

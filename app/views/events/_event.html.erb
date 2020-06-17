@@ -1,14 +1,7 @@
-<!--
-<li id="event-<%#= event.id %>">
-  <span class="event_title"><%#= link_to event.title, event_path(event) %></span>
-  <span class="event_date"><%#= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%#= event.end_date.strftime("%Y-%m-%d %H:%M") %></span>
-</li>
--->
-
 <% if event.infos.any? %>
   <ul class="alt">
     <% event.infos.each do |info| %>
-      <li>[<%= link_to event.title, event_path(event) %>]<%= link_to info.title, event_info_path(event, info) %></li>
+      <li><%= link_to event.title, event_path(event) %> - <%= link_to info.title, event_info_path(event, info) %></li>
     <% end %>
   </ul>
 <% end %>

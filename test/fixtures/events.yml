@@ -1,5 +1,4 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   content: "One Event"
   start_date: <%= 10.minutes.ago %>
@@ -32,7 +31,8 @@ four:
   capacity: 5
   user: alice
 
-alice_event:
+alice_event: 
+  id: 1
   content: "Most recent Event"
   start_date: <%= Time.zone.now + 4.hours %>
   end_date: <%= Time.zone.now + 1.hours %>

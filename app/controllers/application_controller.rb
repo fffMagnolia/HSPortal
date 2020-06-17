@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   # rescure_fromはスタックされることに注意
-  rescue_from ActionController::RoutingError, with: :render_404
-  rescue_from ActiveRecord::RecordNotFound, with: :render_404
+  #rescue_from ActionController::RoutingError, with: :render_404
+  #rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   def render_404(e = nil)
     if e

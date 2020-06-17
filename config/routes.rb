@@ -17,11 +17,13 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :events, only: [:new, :create, :edit, :update, :index, :show]
+  # e.g. events/:event_id/infos/:info_id
+  resources :events, only: [:new, :create, :edit, :update, :index, :show] do
+    resources :infos, only: [:new, :create, :show, :destroy]
+  end
   resources :entries, only: [:create]
-  resources :infos, only: [:new, :create, :show, :destroy]
   resources :inquiries, only: [:new, :create]
 
   # 最終行に書く必要があることに注意
-  get '*path', to: 'application#render_404'
+  #get '*path', to: 'application#render_404'
 end

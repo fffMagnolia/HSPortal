@@ -47,7 +47,7 @@
         <tr>
           <td><%= link_to event.title, event_path(event) %></td>
           <td><%= event.start_date.strftime("%Y-%m-%d %H:%M") %> - <%= event.end_date.strftime("%Y-%m-%d %H:%M") %></td>
-          <td><%= link_to "メッセージを作成する", new_info_path(event_id: event.id), class: "button" %></td>
+          <td><%= link_to "メッセージを作成する", new_event_info_path(event), class: "button" %></td>
         </tr>
       <% end %>
     </tbody>

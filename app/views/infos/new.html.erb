@@ -1,8 +1,8 @@
-<% provide :title, @event.title %>
+<% provide :title, "#{@event.title} Info" %>
 <% provide :button_text, '送信する' %>
 
 <div class="flex justify-content-center">
-  <%= form_for(@event.infos.build) do |f| %>
+  <%= form_for(@info, url: event_infos_path(@event)) do |f| %>
     <%= render 'partial/error_messages', object: f.object %>
     <%= hidden_field_tag :event_id, @event.id %>
     <div class="field">
@@ -19,5 +19,6 @@
     </ul>
   <% end %>
 </div>
+<%#= debug(params) if Rails.env.development? %>
 
 

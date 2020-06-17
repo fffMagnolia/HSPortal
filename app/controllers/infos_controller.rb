@@ -4,6 +4,7 @@ class InfosController < ApplicationController
 
   def new
     @event = Event.find(params[:event_id])
+    @info = Info.new
   end
 
   def create
@@ -36,7 +37,7 @@ class InfosController < ApplicationController
     end
 
     def owner
-      @event = Event.find(params[:id])
-      redirect_to root_url if @event.owner_id != current_user.id
+      @event = Event.find(params[:event_id])
+      redirect_to root_url if @event.user_id != current_user.id
     end
 end

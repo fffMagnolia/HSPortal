@@ -1,7 +1,7 @@
 class InfosController < ApplicationController
   before_action :logged_in_user,  only: [:new, :create, :show, :destroy]
   # TODO: ごちゃごちゃしているので整理
-  before_action :owner,           only: [:new, :show, :create, :destroy]
+  before_action :owner,           only: [:new, :create, :destroy]
   # show can only owner and member
   before_action :owner_or_member, only: [:show]
 

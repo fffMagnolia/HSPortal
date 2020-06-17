@@ -8,7 +8,7 @@
 <% if event.infos.any? %>
   <ul class="alt">
     <% event.infos.each do |info| %>
-      <li>[<%= link_to event.title, event_path(event) %>]<%= link_to info.title, info_path(info) %></li>
+      <li>[<%= link_to event.title, event_path(event) %>]<%= link_to info.title, event_info_path(event, info) %></li>
     <% end %>
   </ul>
 <% end %>

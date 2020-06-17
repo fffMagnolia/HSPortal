@@ -49,5 +49,5 @@ second_user.members.create!(event_id: user.events.first.id)
 
 # infoの作成
 event = user.events.first
-event.infos.create!(message: '開催場所のお知らせです。当日は時間までに後述のURLをクリックしてください。https://example.com')
-event.infos.create!(message: 'コロナウイルスの感染拡大防止のため、イベントを中止させていただくことにしました。ご迷惑をおかけしますが、何卒ご了承ください。')
+event.infos.create!(title: 'イベント詳細のお知らせ', message: '開催場所のお知らせです。当日は時間までに後述のURLをクリックしてください。https://example.com')
+event.infos.create!(title: 'イベント中止のお知らせ', message: 'コロナウイルスの感染拡大防止のため、イベントを中止させていただくことにしました。ご迷惑をおかけしますが、何卒ご了承ください。')

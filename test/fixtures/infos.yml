@@ -1,2 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+one:
+  message: '開催場所のお知らせです。当日は時間までに後述のURLをクリックしてください。https://example.com'
+  event_id: 5
 
+two:
+  message: 'コロナウイルスの感染拡大防止のため、イベントを中止させていただくことにしました。ご迷惑をおかけしますが、何卒ご了承ください。'
+  event_id: 5
